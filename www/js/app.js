@@ -6,6 +6,21 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers'])
 
+.directive('script', function() {
+    return {
+      restrict: 'E',
+      scope: false,
+      link: function(scope, elem, attr) {
+        if (attr.type === 'text/javascript-lazy') {
+          var code = elem.text();
+          var f = new Function(code);
+          f();
+        }
+      }
+    };
+  })
+
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -59,12 +74,67 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
-  .state('app.single', {
-    url: '/playlists/:playlistId',
+  .state('app.part1', {
+    url: '/playlists/part1',
     views: {
       'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
+        templateUrl: 'templates/part1.html',
+        controller: 'sample'
+      }
+    }
+  })
+  .state('app.part2', {
+    url: '/playlists/part2',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/part2.html',
+        controller: 'sample'
+      }
+    }
+  })
+  .state('app.part3', {
+    url: '/playlists/part3',
+    cache:false,
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/part3.html',
+        controller: 'sample'
+      }
+    }
+  })
+  .state('app.part4', {
+    url: '/playlists/part4',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/part4.html',
+        controller: 'sample'
+      }
+    }
+  })
+  .state('app.part5', {
+    url: '/playlists/part5',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/part5.html',
+        controller: 'sample'
+      }
+    }
+  })
+  .state('app.part6', {
+    url: '/playlists/part6',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/part6.html',
+        controller: 'sample'
+      }
+    }
+  })
+  .state('app.player', {
+    url: '/player',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/slide-transitions.html',
+        controller: 'sample'
       }
     }
   });

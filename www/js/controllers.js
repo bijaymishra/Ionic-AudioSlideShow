@@ -43,14 +43,56 @@ angular.module('starter.controllers', [])
 
 .controller('PlaylistsCtrl', function($scope) {
   $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
+    { title: 'Part1', id: 1 },
+    { title: 'Part2', id: 2 },
+    { title: 'Part3', id: 3 },
+    { title: 'Part4', id: 4 },
+    { title: 'Part5', id: 5 },
+    { title: 'Part6', id: 6 }
   ];
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+})
+
+.controller('sample', function($scope,$timeout) {
+  $scope.$on("$ionicView.beforeEnter", function() {
+
+    //Put your script in here!
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        //history: true,
+        center: true,
+        audioPrefix: 'audio/',
+        audioSuffix: '.mp3',
+        //audioDefaultDuration: 5,
+        audioPlayerOpacity: 0.5,
+
+
+                // transition: 'slide',
+                // transitionSpeed: 'slow',
+                // backgroundTransition: 'slide'
+            });
+
+});
+ /* $timeout(function(){
+  Reveal.initialize({
+        controls: true,
+        progress: true,
+        //history: true,
+        center: true,
+        audioPrefix: 'audio/',
+        audioSuffix: '.mp3',
+        //audioDefaultDuration: 5,
+        audioPlayerOpacity: 0.5,
+
+
+                // transition: 'slide',
+                // transitionSpeed: 'slow',
+                // backgroundTransition: 'slide'
+            });
+  },1* 100);*/
+
+
 });
