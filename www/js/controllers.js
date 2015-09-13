@@ -56,7 +56,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('sample', function($scope,$timeout) {
-  $scope.$on("$ionicView.beforeEnter", function() {
+ /* $scope.$on("$ionicView.beforeEnter", function() {
 
     //Put your script in here!
     Reveal.initialize({
@@ -75,11 +75,11 @@ angular.module('starter.controllers', [])
                 // backgroundTransition: 'slide'
             });
 
-});
- /* $timeout(function(){
+});*/
+  $timeout(function(){
   Reveal.initialize({
         controls: true,
-        progress: true,
+        //progress: true,
         //history: true,
         center: true,
         audioPrefix: 'audio/',
@@ -92,7 +92,28 @@ angular.module('starter.controllers', [])
                 // transitionSpeed: 'slow',
                 // backgroundTransition: 'slide'
             });
-  },1* 100);*/
+  },1* 100);
+
+
+})
+.controller('samplepart2', function($scope,$timeout) {
+$timeout(function(){
+  Reveal.initialize({
+        controls: true,
+        //progress: true,
+        //history: true,
+        center: true,
+        //audioPrefix: 'audio/',
+        //audioSuffix: '.mp3',
+        //audioDefaultDuration: 5,
+        //audioPlayerOpacity: 0.5,
+
+
+                // transition: 'slide',
+                // transitionSpeed: 'slow',
+                // backgroundTransition: 'slide'
+            });
+  },1* 100);
 
 
 });
