@@ -91,7 +91,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       cache:false,
       'menuContent': {
         templateUrl: 'templates/part2.html',
-        controller: 'samplepart2'
+        controller: 'sample'
       }
     }
   })

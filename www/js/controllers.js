@@ -75,7 +75,7 @@ angular.module('starter.controllers', [])
   $timeout(function(){
   Reveal.initialize({
         controls: true,
-        //progress: true,
+        progress: true,
         //history: true,
         center: true,
         audioPrefix: 'audio/',
@@ -84,28 +84,7 @@ angular.module('starter.controllers', [])
         audioPlayerOpacity: 0.5,
 
 
-                // transition: 'slide',
-                // transitionSpeed: 'slow',
-                // backgroundTransition: 'slide'
-            });
-  },1* 100);
-
-
-})
-.controller('samplepart2', function($scope,$timeout) {
-$timeout(function(){
-  Reveal.initialize({
-        controls: true,
-        //progress: true,
-        //history: true,
-        center: true,
-        //audioPrefix: 'audio/',
-        //audioSuffix: '.mp3',
-        //audioDefaultDuration: 5,
-        //audioPlayerOpacity: 0.5,
-
-
-                // transition: 'slide',
+                 transition: 'slide',
                 // transitionSpeed: 'slow',
                 // backgroundTransition: 'slide'
             });
@@ -113,3 +92,4 @@ $timeout(function(){
 
 
 });
+
