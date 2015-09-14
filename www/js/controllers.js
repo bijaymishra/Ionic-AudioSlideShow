@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicHistory ) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -46,36 +46,23 @@ angular.module('starter.controllers', [])
     { title: 'Tutorial 1', id: 1 }
     
   ];
+ 
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-})
 
-.controller('sample', function($scope,$timeout) {
- /* $scope.$on("$ionicView.beforeEnter", function() {
+.controller('sample', function($scope,$timeout,$ionicHistory,$state,$window) {
+   
+$scope.$on("$ionicView.afterLeave", function() {
 
-    //Put your script in here!
-    Reveal.initialize({
-        controls: true,
-        progress: true,
-        //history: true,
-        center: true,
-        audioPrefix: 'audio/',
-        audioSuffix: '.mp3',
-        //audioDefaultDuration: 5,
-        audioPlayerOpacity: 0.5,
+   $window.location.reload(true);
+});
 
-
-                // transition: 'slide',
-                // transitionSpeed: 'slow',
-                // backgroundTransition: 'slide'
-            });
-
-});*/
-  $timeout(function(){
+   $scope.$on("$ionicView.enter", function() {
+  
+ 
   Reveal.initialize({
         controls: true,
-        progress: true,
+        //progress: true,
         //history: true,
         center: true,
         audioPrefix: 'audio/',
@@ -84,12 +71,16 @@ angular.module('starter.controllers', [])
         audioPlayerOpacity: 0.5,
 
 
-                 transition: 'slide',
+                 //transition: 'slide',
                 // transitionSpeed: 'slow',
                 // backgroundTransition: 'slide'
             });
-  },1* 100);
+  
+  });
 
+    $scope.$on("$ionicView.unloaded", function() {
+   
+    });
 
 });
 

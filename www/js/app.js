@@ -66,7 +66,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     })
     .state('app.playlists', {
       url: '/playlists',
-      cache:false,
       views: {
         'menuContent': {
           templateUrl: 'templates/playlists.html',
@@ -78,7 +77,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   .state('app.part1', {
     url: '/playlists/part1',
     views: {
-      cache:false,
+      cache: false,
       'menuContent': {
         templateUrl: 'templates/part1.html',
         controller: 'sample'
