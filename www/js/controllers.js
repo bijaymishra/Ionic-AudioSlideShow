@@ -59,7 +59,7 @@ $scope.$on("$ionicView.afterLeave", function() {
    $scope.$on("$ionicView.enter", function() {
      setTimeout(function(){
     document.getElementsByClassName("audio")[0].play();
-}, 2000);
+}, 500);
  
   Reveal.initialize({
         controls: true,
@@ -87,7 +87,7 @@ Reveal.addEventListener( 'slidechanged', function( event ) {
     document.getElementsByClassName("audio")[state.indexh].play();
     event.stopPropagation();
 
-}, 2000);
+}, 1500);
 } );
 
 
