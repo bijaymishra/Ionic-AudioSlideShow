@@ -56,9 +56,10 @@ $scope.$on("$ionicView.afterLeave", function() {
 
    $window.location.reload(true);
 });
-
    $scope.$on("$ionicView.enter", function() {
-  
+     setTimeout(function(){
+    document.getElementsByClassName("audio")[0].play();
+}, 2000);
  
   Reveal.initialize({
         controls: true,
@@ -73,10 +74,22 @@ $scope.$on("$ionicView.afterLeave", function() {
 
                  //transition: 'slide',
                 // transitionSpeed: 'slow',
-                // backgroundTransition: 'slide'
+                 backgroundTransition: 'slide'
             });
   
   });
+
+Reveal.addEventListener( 'slidechanged', function( event ) {
+  var state = Reveal.getState();
+  var getaudio
+  console.log(state);
+    setTimeout(function(){
+    document.getElementsByClassName("audio")[state.indexh].play();
+    event.stopPropagation();
+
+}, 2000);
+} );
+
 
     $scope.$on("$ionicView.unloaded", function() {
    
