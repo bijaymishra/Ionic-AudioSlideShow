@@ -47,25 +47,9 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/search.html'
-      }
-    }
-  })
-
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
     .state('app.playlists', {
       url: '/playlists',
+      cache: false,
       views: {
         'menuContent': {
           templateUrl: 'templates/playlists.html',
@@ -84,52 +68,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     }
   })
-  .state('app.part2', {
-    url: '/playlists/part2',
-    views: {
-      cache:false,
-      'menuContent': {
-        templateUrl: 'templates/part2.html',
-        controller: 'sample'
-      }
-    }
-  })
-  .state('app.part3', {
-    url: '/playlists/part3',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/part3.html',
-        controller: 'sample'
-      }
-    }
-  })
-  .state('app.part4', {
-    url: '/playlists/part4',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/part4.html',
-        controller: 'sample'
-      }
-    }
-  })
-  .state('app.part5', {
-    url: '/playlists/part5',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/part5.html',
-        controller: 'sample'
-      }
-    }
-  })
-  .state('app.part6', {
-    url: '/playlists/part6',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/part6.html',
-        controller: 'sample'
-      }
-    }
-  })
+ 
   .state('app.player', {
     url: '/player',
     views: {

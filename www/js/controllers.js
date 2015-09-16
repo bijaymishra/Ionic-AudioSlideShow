@@ -52,12 +52,8 @@ angular.module('starter.controllers', [])
 
 .controller('sample', function($scope,$timeout,$ionicHistory,$state,$window) {
    
-$scope.$on("$ionicView.afterLeave", function() {
-
-   $window.location.reload(true);
-});
    $scope.$on("$ionicView.enter", function() {
-     setTimeout(function(){
+   setTimeout(function(){
     document.getElementsByClassName("audio")[0].play();
 }, 500);
  
@@ -92,7 +88,8 @@ Reveal.addEventListener( 'slidechanged', function( event ) {
 
 
     $scope.$on("$ionicView.unloaded", function() {
-   
+      // To reset the slide to starting position. 
+          Reveal.slide(0, 0, 0);
     });
 
 });
