@@ -75,15 +75,29 @@ angular.module('starter.controllers', [])
   
   });
 
+   function stopAll() {
+var media = document.getElementsByClassName('audio'),
+    i = media.length;
+
+while (i--) {
+    media[i].pause();
+    media[i].load();
+
+}
+}
+
 Reveal.addEventListener( 'slidechanged', function( event ) {
+  stopAll();
   var state = Reveal.getState();
   var getaudio
   console.log(state);
-    setTimeout(function(){
+     setTimeout(function(){
+     stopAll(); 
     document.getElementsByClassName("audio")[state.indexh].play();
     event.stopPropagation();
-
-}, 1500);
+    
+}, 1000);
+    
 } );
 
 
