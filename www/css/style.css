@@ -1,4 +1,80 @@
-/* Empty. Add your own CSS if you like */
+/* list modification */
 .item {
-	color:#006193;
-};
+  color:#006193;
+}
+.logo {
+    width: 100%;
+    padding: 0 20px;
+}
+
+img.menuicon {
+    height: 30px;
+    text-align: center;
+    padding: 2px;
+}
+
+span.icon.menuicon {
+    margin-left: -3%;
+}
+
+/* Home Page Design*/
+
+.home_container{
+  background-image: url("../img/background.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.home_container .item p{
+  font-size: 14px;
+  line-height: 20px;
+}
+.home_container .item h2 {
+    font-size: 14px;
+    font-weight: bold;
+}
+.home_container .item h3 {
+    margin: 0 0 4px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.medLogo_icon_container {
+    height: 45%;
+    padding-top:15%;
+}
+
+.home_container .scroll{
+  height: 100%;
+}
+.home_button_container {
+    height: 50%;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+.home_button_container .row  .title{
+    font-size: 16px;
+    line-height: 20px;
+    display: block;
+    color: #98a0a3;
+}
+.home_button_container .button-icon .icon:before{
+    font-size: 40px;
+    color: #006193;
+    display: block;
+    padding-bottom: 10px;
+}
+.home_button_container .row + .row {
+    margin-top: -7%;
+}
+.home_button_container .row{
+   height: 36%;
+}
+.home_button_container a.button-icon{
+  padding: 0;
+}
+.home_button_container .col{
+  text-align: center;
+  padding: 0px;
+}

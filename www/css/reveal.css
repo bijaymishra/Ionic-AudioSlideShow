@@ -1202,14 +1202,3 @@ position: relative;
     top: 0;
     margin: 110% 0;
 }
-img.logo {
-    width: 100%;
-    height: 100%;
-    padding: 0 20px;
-}
-
-img.menuicon {
-    height: 30px;
-    text-align: center;
-    padding: 2px;
-}
