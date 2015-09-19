@@ -36,7 +36,7 @@
 			// The "normal" size of the presentation, aspect ratio will be preserved
 			// when the presentation is scaled to fit different resolutions
 			width: 960,
-			height: 700,
+			height: 800,
 
 			// Factor of the display size that should remain empty around the content
 			margin: 0.1,
@@ -543,7 +543,7 @@
 			if( slide.classList.contains( 'stack' ) === false ) {
 				// Center the slide inside of the page, giving the slide some margin
 				var left = ( pageWidth - slideWidth ) / 2,
-					top = ( pageHeight - slideHeight ) / 2;
+					top = ( pageHeight - slideHeight ) / 3;
 
 				var contentHeight = getAbsoluteHeight( slide );
 				var numberOfPages = Math.max( Math.ceil( contentHeight / pageHeight ), 1 );
@@ -1538,7 +1538,7 @@
 				// Apply scale transform as a fallback
 				else {
 					dom.slides.style.left = '50%';
-					dom.slides.style.top = '50%';
+					dom.slides.style.top = '30%';
 					dom.slides.style.bottom = 'auto';
 					dom.slides.style.right = 'auto';
 					transformSlides( { layout: 'translate(-50%, -50%) scale('+ scale +')' } );

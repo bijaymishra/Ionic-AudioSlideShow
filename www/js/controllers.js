@@ -53,11 +53,11 @@ angular.module('starter.controllers', [])
 .controller('sample', function($scope,$timeout,$ionicHistory,$state,$window) {
    
    $scope.$on("$ionicView.enter", function() {
-   setTimeout(function(){
-    document.getElementsByClassName("audio")[0].play();
-}, 500);
+   /*setTimeout(function(){
+   // document.getElementsByClassName("audio")[0].play();
+}, 500);*/
  
-  Reveal.initialize({
+  /*Reveal.initialize({
         controls: true,
         //progress: true,
         //history: true,
@@ -71,9 +71,30 @@ angular.module('starter.controllers', [])
                  //transition: 'slide',
                 // transitionSpeed: 'slow',
                  backgroundTransition: 'slide'
-            });
-  
-  });
+            });*/
+   Reveal.initialize({
+    dependencies: [
+         // Remote control your reveal.js presentation using a touch device
+        { src: 'plugin/audio-slideshow/audio-slideshow.js', async: false },
+
+    ],
+    controls: true,
+        progress: true,
+        //history: true,
+        center: true,
+        audioPrefix: 'audio/',
+        audioSuffix: '.mp3',
+        //audioDefaultDuration: 5,
+        audioPlayerOpacity: 0.2,
+
+
+        // transition: 'slide',
+        // transitionSpeed: 'slow',
+        // backgroundTransition: 'slide'
+      });
+});
+
+
 
    function stopAll() {
 var media = document.getElementsByClassName('audio'),

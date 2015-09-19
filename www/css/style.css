@@ -16,6 +16,10 @@ img.menuicon {
 span.icon.menuicon {
     margin-left: -3%;
 }
+p.slidetext {
+    top: -300px;
+    position: relative;
+}
 
 /* Home Page Design*/
 
