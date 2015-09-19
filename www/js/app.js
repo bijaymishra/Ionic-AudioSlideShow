@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
 
 .directive('script', function() {
     return {
@@ -37,12 +37,13 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
+  $ionicConfigProvider.views.maxCache(0);
   $stateProvider
 
     .state('app', {
     url: '/app',
-    abstract: true,
+    abstract: false,
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
@@ -58,7 +59,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     })
     .state('app.about', {
       url: '/about',
-      cache: false,
+      cache: true,
       views: {
         'menuContent': {
           templateUrl: 'templates/about.html',
@@ -69,7 +70,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
     .state('app.playlists', {
       url: '/playlists',
-      cache: false,
+      cache: true,
       views: {
         'menuContent': {
           templateUrl: 'templates/playlists.html',
@@ -77,9 +78,19 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+    .state('app.chapter-detail', {
+      url: '/playlists/:chapterId',
+      cache:true,
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/chapter-details.html',
+          controller: 'ChapterDetailCtrl'
+        }
+      }
+    })
 
   .state('app.part1', {
-    url: '/playlists/part1',
+    url: '/playlists/:chapterId/:lessonId',
     views: {
       cache: false,
       'menuContent': {

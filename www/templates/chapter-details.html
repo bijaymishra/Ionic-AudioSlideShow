@@ -1,0 +1,9 @@
+<ion-view view-title= '{{lesson.name}}' align-title="center">
+  <ion-content has-header="true" padding="true">
+      <ion-list>
+      <ion-item ng-repeat="lesson in lessons" type="item-text-wrap" href="#/app/playlists/{{chapter.id}}/{{lesson.id}}">
+        {{lesson.name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

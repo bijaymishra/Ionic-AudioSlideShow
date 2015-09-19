@@ -41,17 +41,32 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Tutorial 1', id: 1 }
-    
-  ];
- 
+.controller('PlaylistsCtrl', function($scope,Chapters) {
+  $scope.playlists = Chapters.all();
+  
+
+})
+
+.controller('ChapterDetailCtrl', function($scope, $stateParams, Chapters) {
+  $scope.chapter = Chapters.get($stateParams.chapterId);
+  console.log($scope.chapter);
+  $scope.lessons = $scope.chapter.lessons;
+
 })
 
 
-.controller('sample', function($scope,$timeout,$ionicHistory,$state,$window) {
+.controller('sample', function($scope,$timeout,$ionicHistory,$state,$window,$stateParams,Chapters) {
+
+   var chapter = Chapters.get($stateParams.chapterId);
+  var lesson = chapter.lessons[$stateParams.lessonId];
+  var sections = lesson.sections;
    
+    console.log(lesson)
+     $scope.$on("$ionicView.beforeEnter", function() {
+
+
+     });
+
    $scope.$on("$ionicView.enter", function() {
    /*setTimeout(function(){
    // document.getElementsByClassName("audio")[0].play();
@@ -68,10 +83,10 @@ angular.module('starter.controllers', [])
         audioPlayerOpacity: 0.5,
 
 
-                 //transition: 'slide',
-                // transitionSpeed: 'slow',
                  backgroundTransition: 'slide'
             });*/
+
+
    Reveal.initialize({
     dependencies: [
          // Remote control your reveal.js presentation using a touch device
@@ -84,7 +99,7 @@ angular.module('starter.controllers', [])
         center: true,
         audioPrefix: 'audio/',
         audioSuffix: '.mp3',
-        //audioDefaultDuration: 5,
+        audioDefaultDuration: 5,
         audioPlayerOpacity: 0.2,
 
 
@@ -96,7 +111,7 @@ angular.module('starter.controllers', [])
 
 
 
-   function stopAll() {
+  /* function stopAll() {
 var media = document.getElementsByClassName('audio'),
     i = media.length;
 
@@ -105,9 +120,9 @@ while (i--) {
     media[i].load();
 
 }
-}
+}*/
 
-Reveal.addEventListener( 'slidechanged', function( event ) {
+/*Reveal.addEventListener( 'slidechanged', function( event ) {
   stopAll();
   var state = Reveal.getState();
   var getaudio
@@ -119,12 +134,13 @@ Reveal.addEventListener( 'slidechanged', function( event ) {
     
 }, 1000);
     
-} );
+} );*/
 
 
     $scope.$on("$ionicView.unloaded", function() {
       // To reset the slide to starting position. 
           Reveal.slide(0, 0, 0);
+         //$window.location.reload(true)
     });
 
 });
