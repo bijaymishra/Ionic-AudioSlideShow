@@ -62,7 +62,7 @@ angular.module('starter.controllers', [])
   var sections = lesson.sections;
    
     console.log(lesson)
-     $scope.$on("$ionicView.beforeEnter", function() {
+     $scope.$on("$ionicView.afterLeave", function() {
 
 
      });
@@ -88,11 +88,7 @@ angular.module('starter.controllers', [])
 
 
    Reveal.initialize({
-    dependencies: [
-         // Remote control your reveal.js presentation using a touch device
-        { src: 'plugin/audio-slideshow/audio-slideshow.js', async: false },
-
-    ],
+    
     controls: true,
         progress: true,
         //history: true,
@@ -100,12 +96,17 @@ angular.module('starter.controllers', [])
         audioPrefix: 'audio/',
         audioSuffix: '.mp3',
         audioDefaultDuration: 5,
-        audioPlayerOpacity: 0.2,
+        audioPlayerOpacity: 0.5,
 
 
         // transition: 'slide',
         // transitionSpeed: 'slow',
         // backgroundTransition: 'slide'
+        dependencies: [
+         // Remote control your reveal.js presentation using a touch device
+        { src: 'plugin/audio-slideshow/audio-slideshow.js', async: false },
+
+    ]
       });
 });
 
@@ -139,8 +140,9 @@ while (i--) {
 
     $scope.$on("$ionicView.unloaded", function() {
       // To reset the slide to starting position. 
-          Reveal.slide(0, 0, 0);
+          //Reveal.slide(0, 0, 0);
          //$window.location.reload(true)
+         $ionicHistory.clearCache();
     });
 
 });
