@@ -20,10 +20,15 @@ p.slidetext {
     top: -300px;
     position: relative;
 }
+.clearfix:after{
+  content: ""
+  display:block;
+  clear: both;
+}
 
 /* Home Page Design*/
 
-.home_container{
+.intro_container, .home_container{
   background-image: url("../img/background.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -83,8 +88,37 @@ p.slidetext {
   padding: 0px;
 }
 
+/*Intro Page Design */
+.login_btn_continer{
+  position: absolute;
+  bottom: 0;
+  width: 100%
+  height:75%;
+}
 
+.loginIntro_btn_container button.button.button-clear .signup{
+  float: left;
+}
 
+.loginIntro_btn_container button.button-clear.login{
+  float: right;
+}
+
+.intro_container .scroll {
+    height: 100%;
+}
+.intro_container .medLogo_icon_container {
+    height: 80%;
+    padding-top:15%;
+}
+span.icon.ion-log-in.login {
+    padding-right: 10px;
+    color: #0066A4;
+}
+span.icon.ion-android-person-add.signup {
+    padding-right: 10px;
+    color: #0066A4;
+}
 /* ----------- iPhone 4 and 4S ----------- */
 
 /* Portrait and Landscape */
@@ -319,3 +353,4 @@ p.slidetext {
 } 
 
 }
+

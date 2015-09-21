@@ -48,36 +48,30 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
     controller: 'AppCtrl'
   })
 
-    .state('app.intro', {
+    .state('intro', {
       url: '/intro',
       cache: true,
-      views: {
-        'menuContent': {
           templateUrl: 'app/intro/intro.html',
-          //controller: 'PlaylistsCtrl'
-        }
-      }
+          controller: 'IntroCtrl'
+        
+      
     })
-    .state('app.login', {
+    .state('login', {
       url: '/login',
       cache: true,
-      views: {
-        'menuContent': {
           templateUrl: 'app/authentication/login.html',
-          //controller: 'PlaylistsCtrl'
-        }
-      }
+          controller: 'AuthCtrl'
+        
+      
     })
 
-    .state('app.signup', {
+    .state('signup', {
       url: '/signup',
       cache: true,
-      views: {
-        'menuContent': {
           templateUrl: 'app/authentication/signup.html',
-          //controller: 'PlaylistsCtrl'
-        }
-      }
+          controller: 'AuthCtrl'
+        
+      
     })
      .state('app.home', {
       url: '/home',
@@ -142,5 +136,5 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/intro');
+  $urlRouterProvider.otherwise('intro');
 });
