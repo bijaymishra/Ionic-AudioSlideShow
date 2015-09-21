@@ -44,15 +44,47 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
     .state('app', {
     url: '/app',
     abstract: false,
-    templateUrl: 'templates/menu.html',
+    templateUrl: 'app/menu/menu.html',
     controller: 'AppCtrl'
   })
+
+    .state('app.intro', {
+      url: '/intro',
+      cache: true,
+      views: {
+        'menuContent': {
+          templateUrl: 'app/intro/intro.html',
+          //controller: 'PlaylistsCtrl'
+        }
+      }
+    })
+    .state('app.login', {
+      url: '/login',
+      cache: true,
+      views: {
+        'menuContent': {
+          templateUrl: 'app/authentication/login.html',
+          //controller: 'PlaylistsCtrl'
+        }
+      }
+    })
+
+    .state('app.signup', {
+      url: '/signup',
+      cache: true,
+      views: {
+        'menuContent': {
+          templateUrl: 'app/authentication/signup.html',
+          //controller: 'PlaylistsCtrl'
+        }
+      }
+    })
      .state('app.home', {
       url: '/home',
       cache: true,
       views: {
         'menuContent': {
-          templateUrl: 'templates/home.html',
+          templateUrl: 'app/home/home.html',
           //controller: 'PlaylistsCtrl'
         }
       }
@@ -62,7 +94,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
       cache: true,
       views: {
         'menuContent': {
-          templateUrl: 'templates/about.html',
+          templateUrl: 'app/about/about.html',
           //controller: 'PlaylistsCtrl'
         }
       }
@@ -73,7 +105,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
       cache: true,
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
+          templateUrl: 'app/chapters/playlists.html',
           controller: 'PlaylistsCtrl'
         }
       }
@@ -83,7 +115,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
       cache:true,
       views: {
         'menuContent': {
-          templateUrl: 'templates/chapter-details.html',
+          templateUrl: 'app/chapters/chapter-details.html',
           controller: 'ChapterDetailCtrl'
         }
       }
@@ -94,7 +126,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
     views: {
       cache: false,
       'menuContent': {
-        templateUrl: 'templates/part1.html',
+        templateUrl: 'app/player/part1.html',
         controller: 'sample'
       }
     }
@@ -110,5 +142,5 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/home');
+  $urlRouterProvider.otherwise('/app/intro');
 });
