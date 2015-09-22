@@ -1,7 +1,24 @@
-<ion-view view-title= "{{lesson.name}}">
-  
+<ion-view hide-nav-bar="true" view-title= "{{lesson.name}}">
+<div class="padding">
+      <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item"><i class="icon ion-ios-arrow-back"></i> 
+</div>
 
 		<div class="reveal">
+
+			<div class="slides">
+
+				<section ng-repeat = "section in sections" data-background="{{section.img}}" data-audio-text="{{section.caption}}" data-audio-src='{{section.sound}}'>
+				<p class="slidetext">
+					{{section.caption}} 
+				</p>
+				
+			</section>
+
+		</div>
+	</div>
+  
+
+		<!--div class="reveal">
 
 			<div class="slides">
 
@@ -9,21 +26,21 @@
 				<p class="slidetext">
 					Add text for user to read while listening may be some info. 
 				</p>
-				<!--ion-footer-bar align-title="left" class="bar-assertive" >
+				<ion-footer-bar align-title="left" class="bar-assertive" >
 				<audio class="audio" preload="none" src='audio/c01_know_p02_a01.mp3' controls></audio>
-				</ion-footer-bar-->
+				</ion-footer-bar>
 			</section>
 
 
 
 
-			<section class="fragment fade-in" data-background="images/05_img_2.png" data-audio-text="With audio slideshows you can add recorded audio to whatever you want to deliver to your audience" data-audio-src='audio/c01_conclusion2.mp3'>
+			<!--section class="fragment fade-in" data-background="images/05_img_2.png" data-audio-text="With audio slideshows you can add recorded audio to whatever you want to deliver to your audience" data-audio-src='audio/c01_conclusion2.mp3'>
 				<p class="slidetext">
 					Add text for user to read while listening may be some info.
 				</p>
 				<!--ion-footer-bar align-title="left" class="bar-assertive">
 				<audio class="audio" src='audio/c01_conclusion2.mp3' controls></audio>
-				</ion-footer-bar-->
+				</ion-footer-bar>
 				 <aside class="notes">
         Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
     </aside>
@@ -35,7 +52,7 @@
 				</p>
 				<!--ion-footer-bar align-title="left" class="bar-assertive">
 				<audio class="audio" src='audio/c01_know_p02_a06.mp3' controls></audio>
-				</ion-footer-bar-->
+				</ion-footer-bar>
 			</section>
 
 			<section class="fragment fade-in" data-background="images/syscare.JPG" data-audio-text="With audio slideshows you can add recorded audio to whatever you want to deliver to your audience" data-audio-src='audio/c01_know_p02_a07.mp3'>
@@ -44,7 +61,7 @@
 				</p>
 				<!--ion-footer-bar align-title="left" class="bar-assertive">
 				<audio class="audio" preload= "none"  src='audio/c01_know_p02_a07.mp3' controls></audio>
-				</ion-footer-bar-->
+				</ion-footer-bar>
 			</section>
 
 			<section class="fragment fade-in" data-background="images/blueman.JPG" data-audio-text="With audio slideshows you can add recorded audio to whatever you want to deliver to your audience" data-audio-src='audio/c01_know_p02_a02c.mp3'>
@@ -53,7 +70,7 @@
 				</p>
 				<!--ion-footer-bar align-title="left" class="bar-assertive">
 				<audio class="audio" src='audio/c01_know_p02_a02c.mp3' controls></audio>
-				</ion-footer-bar-->
+				</ion-footer-bar>
 			</section>
 			
 
@@ -63,11 +80,13 @@
 				</p>
 				<!--ion-footer-bar align-title="left" class="bar-assertive">
 				<audio class="audio" src='audio/c01_conclusion1.mp3' controls></audio>
-				</ion-footer-bar-->
+				</ion-footer-bar>
 			</section>
 		</div>
 			
-		</div>
+		</div-->
+
+
 
 
 </ion-view>

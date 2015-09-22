@@ -38,7 +38,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
 })
 
 .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
-  $ionicConfigProvider.views.maxCache(0);
+  
   $stateProvider
 
     .state('app', {
@@ -106,7 +106,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
     })
     .state('app.chapter-detail', {
       url: '/playlists/:chapterId',
-      cache:true,
+      cache:false,
       views: {
         'menuContent': {
           templateUrl: 'app/chapters/chapter-details.html',

@@ -39,16 +39,29 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope,Chapters) {
+.controller('PlaylistsCtrl', function($scope,$state,Chapters) {
   $scope.playlists = Chapters.all();
-  
+
 
 })
 
-.controller('ChapterDetailCtrl', function($scope, $stateParams, Chapters) {
+.controller('ChapterDetailCtrl', function($scope,$state,$window, $ionicHistory,$stateParams,$rootScope, Chapters) {
   $scope.chapter = Chapters.get($stateParams.chapterId);
   console.log($scope.chapter);
   $scope.lessons = $scope.chapter.lessons;
+   var chapter = Chapters.get($stateParams.chapterId);
+  var lesson = Chapters.get($stateParams.lessonId);
+
+  console.log($stateParams)
+
+  $scope.playLesson = function(){
+    //$window.location.reload(true);
+    
+  }
+  $rootScope.$ionicGoBack = function() {
+    $ionicHistory.goBack();
+    
+        };
 
 })
 
@@ -57,18 +70,22 @@ angular.module('starter.controllers', [])
 
    var chapter = Chapters.get($stateParams.chapterId);
   var lesson = chapter.lessons[$stateParams.lessonId];
-  var sections = lesson.sections;
+  $scope.sections = lesson.sections;
    
-    console.log(lesson)
+   for(i=0;i<$scope.sections.length;i++)
+   {
+    //console.log($scope.sections[i]);
+   }
+    
      $scope.$on("$ionicView.afterLeave", function() {
 
 
      });
 
    $scope.$on("$ionicView.enter", function() {
-   /*setTimeout(function(){
+   setTimeout(function(){
    // document.getElementsByClassName("audio")[0].play();
-}, 500);*/
+
  
   /*Reveal.initialize({
         controls: true,
@@ -106,6 +123,7 @@ angular.module('starter.controllers', [])
 
     ]
       });
+ }, 0);
 });
 
 
@@ -136,12 +154,7 @@ while (i--) {
 } );*/
 
 
-    $scope.$on("$ionicView.unloaded", function() {
-      // To reset the slide to starting position. 
-          //Reveal.slide(0, 0, 0);
-         //$window.location.reload(true)
-         $ionicHistory.clearCache();
-    });
+    
 
 });
 
