@@ -24,5 +24,13 @@
     $ionicHistory.goBack();
     
         };
+
+         Waves.displayEffect();
+    setTimeout(function() {
+        Mi.motion.panInLeft({
+            selector: '.animate-pan-in-left'
+        });
+    }, 500);
+    
     }
 })();

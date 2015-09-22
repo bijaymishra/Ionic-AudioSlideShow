@@ -1,23 +1,28 @@
-<ion-view view-title="Login" cache-false = "true">
-   <ion-header-bar>
-    <h1 class="title">Login</h1>
+<ion-view hide-nav-bar="true" cache-false = "true">
+   
+  <ion-content class="ionic login " style="background-image: url('../img/mountains.jpg');">
     
-  </ion-header-bar>
-  <ion-content>
-    <form ng-submit="doLogin()">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="loginData.username">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
-        </label>
-        <label class="item">
-          <button class="button button-block button-positive" ng-click="login();">Log in</button>
-        </label>
-      </div>
-    </form>
+       
+        <div class="hero no-header flat">
+            <div class="content">
+                
+      <img class="logo" src="img/logo.png"/>
+    
+            </div>
+        </div>
+        <div class="list">
+            <label class="item item-input item-md-label" placeholder="Username" highlight-color="balanced" type="text"><input type="text"><span class="input-label">Username</span><div class="highlight highlight-balanced"></div></label>
+            <label class="item item-input item-md-label" placeholder="Password" highlight-color="energized" type="password"><input type="password"><span class="input-label">Password</span><div class="highlight highlight-energized"></div></label>
+        </div>
+        <div class="padding">
+            <button class="button button-block button-positive waves-effect waves-button waves-light" ng-click="login();">Login</button>
+        </div>
+        <div class="button-bar">
+            <button class="button button-small button-outline button-assertive light-bg icon-left ion-social-google waves-effect waves-button waves-light">Google+</button>
+            <button class="button button-small button-outline button-positive light-bg icon-left ion-social-facebook waves-effect waves-button waves-light">Facebook</button>
+        </div>
+    
+
+   
   </ion-content>
 </ion-view>
