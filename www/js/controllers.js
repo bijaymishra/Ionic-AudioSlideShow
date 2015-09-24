@@ -45,23 +45,41 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('ChapterDetailCtrl', function($scope,$state,$window, $ionicHistory,$stateParams,$rootScope, Chapters) {
+.controller('ChapterDetailCtrl', function($scope,$state,$window,$timeout, $ionicHistory,$stateParams,$rootScope,$ionicLoading, Chapters) {
   $scope.chapter = Chapters.get($stateParams.chapterId);
   console.log($scope.chapter);
   $scope.lessons = $scope.chapter.lessons;
    var chapter = Chapters.get($stateParams.chapterId);
   var lesson = Chapters.get($stateParams.lessonId);
 
-  console.log($stateParams)
+  $scope.chapterName = $scope.chapter.name;
 
   $scope.playLesson = function(){
     //$window.location.reload(true);
     
   }
-  $rootScope.$ionicGoBack = function() {
-    $ionicHistory.goBack();
+  $scope.goBack = function() {
+    
+    $state.go('app.playlists');
     
         };
+
+         $ionicLoading.show({
+    content: 'Loading',
+    animation: 'fade-in',
+    showBackdrop: true,
+    maxWidth: 200,
+    showDelay: 0
+  });
+   $timeout(function () {
+    $ionicLoading.hide();
+   
+  }, 1000);
+$scope.$on("$ionicView.enter", function() {
+  
+});
+
+       
 
 })
 
@@ -78,6 +96,8 @@ angular.module('starter.controllers', [])
    }
     
      $scope.$on("$ionicView.afterLeave", function() {
+
+$window.location.reload(true);
 
 
      });

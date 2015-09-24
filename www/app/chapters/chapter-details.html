@@ -1,9 +1,14 @@
-<ion-view view-title= '{{lesson.name}}' align-title="center">
-  <ion-content has-header="true" padding="true">
+<ion-view hide-nav-bar="true" view-title= '{{chapterName}}' align-title="center">
+<div class="bar nav-bar mychapterdetails bar-positive">
+
+      <button ng-click="goBack()" class="button back-button buttons  button-clear header-item"><i class="icon ion-ios-arrow-back"></i></button>
+      <h1 class="title">{{chapterName}}</h1>
+</div>
+  
       <ion-list>
       <ion-item ng-repeat="lesson in lessons" type="item-text-wrap" href="#/app/playlists/{{chapter.id}}/{{lesson.id}}" ng-click="playLesson1();">
         {{lesson.name}}
       </ion-item>
     </ion-list>
-  </ion-content>
+  
 </ion-view>

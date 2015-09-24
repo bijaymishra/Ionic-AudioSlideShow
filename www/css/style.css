@@ -179,6 +179,11 @@ label.item {
 }
 
 /*------ Signup ends -----*/
+/* chapters CSS starts*/
+.bar.mychapterdetails.bar-positive {
+    position: relative;
+}
+/* Chapter CSS Ends*/
 
 /* ----------- iPhone 4 and 4S ----------- */
 
