@@ -1,12 +1,28 @@
 <ion-view hide-nav-bar="true" class="signup view-container">
     <ion-content class="signup_container HelveticaBody">
     <div class="signup_header padding">
-      <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item"><i class="icon ion-ios-arrow-back"></i> <span class="heading HelveticaHeading">SIGNUP</span>
-      <div class="list list-solid padding">
-      	<div class="button-bar">
+      <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item"><i class="icon ion-ios-arrow-back"></i> <span class="heading HelveticaHeading"><span class="title-center">SIGNUP</span></span>
+     </div>
+     <div class="ionic login signup">	
+      <div class="button-bar">
             <button class="button button-small button-outline button-assertive light-bg icon-left ion-social-google waves-effect waves-button waves-light">Google+</button>
             <button class="button button-small button-outline button-positive light-bg icon-left ion-social-facebook waves-effect waves-button waves-light">Facebook</button>
         </div>
-      
+        <div class="or">
+        <span></span><span>OR</span><span></span>
+      </div>
+      <label class="item">
+      	Name
+      	<input type="text" name="name">
+      	Email ID
+      	<input type="email" name="email">
+      	PostCode
+      	<input type="tel" name="PostCode">
+
+      </label>
+      <div class="padding">
+            <button class="button button-block button-positive waves-effect waves-button waves-light" ng-click="login();">Signup</button>
+        </div>
+      </div>
 </ion-content>
 </ion-view>
