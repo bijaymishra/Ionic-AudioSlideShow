@@ -64,17 +64,7 @@ angular.module('starter.controllers', [])
     
         };
 
-         $ionicLoading.show({
-    content: 'Loading',
-    animation: 'fade-in',
-    showBackdrop: true,
-    maxWidth: 200,
-    showDelay: 0
-  });
-   $timeout(function () {
-    $ionicLoading.hide();
-   
-  }, 1000);
+        
 $scope.$on("$ionicView.enter", function() {
   
 });
@@ -84,7 +74,7 @@ $scope.$on("$ionicView.enter", function() {
 })
 
 
-.controller('sample', function($scope,$timeout,$ionicHistory,$state,$window,$stateParams,Chapters) {
+.controller('sample', function($scope,$timeout,$ionicHistory,$state,$window,$ionicLoading,$stateParams,Chapters) {
 
    var chapter = Chapters.get($stateParams.chapterId);
   var lesson = chapter.lessons[$stateParams.lessonId];
@@ -96,8 +86,21 @@ $scope.$on("$ionicView.enter", function() {
    }
     
      $scope.$on("$ionicView.afterLeave", function() {
+     
 
 $window.location.reload(true);
+ $ionicLoading.show({
+    content: 'Loading',
+    animation: 'fade-in',
+    showBackdrop: true,
+    maxWidth: 200,
+    showDelay: 0
+  });
+   $timeout(function () {
+    $ionicLoading.hide();
+   
+  }, 2000);
+
 
 
      });
