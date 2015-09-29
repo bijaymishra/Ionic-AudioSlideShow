@@ -10,7 +10,8 @@
      };
 
       $scope.goTologin = function(){
-     	$state.go('login');
+
+        $state.go('login');
      }; 
 
 
@@ -32,5 +33,18 @@
         });
     }, 500);
     
+    $scope.authorization = {
+    username: '',
+    password : ''    
+  };  
+  
+  $scope.signIn = function(form) {
+    if(form.$valid) {
+      $state.go('app.home');
+    }
+  };  
+
+
+
     }
 })();
