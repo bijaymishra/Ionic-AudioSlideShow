@@ -201,39 +201,27 @@ label.item {
 /* Chapter CSS Ends*/
 
 /*Error Message Design Starts*/
-.error-container {
-  margin: 5px 0;
+label.item.has-error {
+  border-bottom: 2px solid red;
 }
 
-.error-container:last-child {
-    margin: 5px 0 0;
+label.item.has-error-lr {
+  border-left: 2px solid red;
+  border-right: 2px solid red;
 }
 
-.error {
-  padding: 10px 16px;
-  font-family: "Arial Black", Gadget, sans-serif;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: #555;
-  vertical-align: middle;
+label.item.valid-lr {
+  border-left: 2px solid green;
+  border-right: 2px solid green;
 }
 
-.error i {
-  font-size: 24px;
-  color: #B83E2C;  
-  vertical-align: middle;
+.form-errors {
+  margin: 5px 0
 }
 
-.last-error-container > .error {
-  padding: 10px 16px 0;
-}
-
-.has-errors {
-  border-bottom: 3px solid #B83E2C;
-}
-
-.no-errors {
-  border-bottom: 3px solid green;
+.form-error {
+  padding: 2px 0 2px 16px;
+  color: red;
 }
 /*Error Message Design Ends */
 

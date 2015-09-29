@@ -24,6 +24,7 @@
     
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-messages.min.js"></script>  
 
     <!-- cordova script (this will be a 404 during development) -->
     <!--script src="cordova.js"></script-->
@@ -53,6 +54,11 @@
 <script src="js/material-ionic.js"></script>
 <script src="js/wave.min.js"></script>
 
+ <script id="app/authentication/error-list.html" type="text/ng-template">
+      <div class="form-error" ng-message="required">This field is required.</div>
+      <div class="form-error" ng-message="minlength">This field is must be at least 5 characters.</div>
+      <div class="form-error" ng-message="maxlength">This field is must be less than 50 characters</div>
+    </script>
 
   </body>
   

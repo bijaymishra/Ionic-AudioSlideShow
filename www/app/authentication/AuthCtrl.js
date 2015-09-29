@@ -33,16 +33,17 @@
         });
     }, 500);
     
-    $scope.authorization = {
+   $scope.user = {
     username: '',
-    password : ''    
-  };  
-  
+    password : ''
+  }
   $scope.signIn = function(form) {
+    console.log(form);
     if(form.$valid) {
-      $state.go('app.home');
+    console.log('Sign-In', $scope.user.username);
+    $state.go('app.home');
     }
-  };  
+  };
 
 
 

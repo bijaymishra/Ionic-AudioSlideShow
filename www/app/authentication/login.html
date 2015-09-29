@@ -13,17 +13,18 @@
        
             
 
-        <form name="authorizationForm" novalidate="" ng-submit="signIn(authorizationForm)"> 
+        <!--form name="authorizationForm" novalidate="" ng-submit="signIn(authorizationForm)"> 
         
           <div class="list">
           
-            <label class="item item-input item-md-label" placeholder="Username" highlight-color="balanced" type="text" ng-class="{ 'has-errors' : authorizationForm.username.$invalid, 'no-errors' : authorizationForm.username.$valid}">
+            <label class="item item-input item-md-label" placeholder="Email" highlight-color="balanced" type="text" ng-class="{ 'has-errors' : authorizationForm.username.$invalid, 'no-errors' : authorizationForm.email.$valid}">
               <span class="input-label">Username</span>
-              <input type="text" name="username" ng-model="authorization.username" ng-minlength="5" ng-maxlength="20" required>
+              <input type="email" name="email" ng-model="authorization.email" ng-minlength="5" ng-maxlength="20" required>
             </label>
             
             <div class="error-container" ng-show="authorizationForm.username.$error" ng-messages="authorizationForm.username.$error">
-              <div ng-messages-include="error-list.html"></div>
+              <div ng-include="app/authentication/error-list.html"></div>
+              <label>USer name is incorrect!!</label>
             </div>
             
             <label class="item item-input item-md-label" placeholder="Password" highlight-color="energized" type="password" ng-class="{ 'has-errors' : authorizationForm.password.$invalid && authorizationForm.$submitted, 'no-errors' : authorizationForm.password.$valid  && authorizationForm.$submitted}">
@@ -41,7 +42,47 @@
             <button class="button button-block button-positive waves-effect waves-button waves-light" type="submit">Login</button>
         </div>
             
-        </form>   
+        </form-->
+         <form name="signinForm" novalidate="" ng-submit="signIn(signinForm)">
+
+            <div class="list">
+              <label class="item item-input item-md-label" placeholder="Email" highlight-color="balanced" type="text" 
+                     ng-class="{ 'has-error' : signinForm.username.$invalid}">
+                <span class="input-label">Username</span>
+                <input type="text"
+                       name="username"
+                       ng-model="user.username" 
+                       ng-minlength="5" 
+                       ng-maxlength="10" 
+                       required>
+              </label>
+
+              <div class="form-errors" ng-messages="signinForm.username.$error" ng-messages-include="app/authentication/error-list.html">
+                <div class="form-error" ng-message="maxlength">This field is must be less than 10 characters</div>
+              </div>
+
+              <label class="item item-input item-md-label" placeholder="Password" highlight-color="energized" type="password" 
+                     ng-class="{ 'has-error-lr' : signinForm.password.$invalid  && signinForm.$submitted, 'valid-lr' : signinForm.password.$valid  && signinForm.$submitted}">
+                <span class="input-label">Password</span>
+                <input type="password"
+                       name="password"
+                       ng-model="user.password" 
+                       ng-minlength="5" 
+                       ng-maxlength="25"
+                       required>
+              </label>
+              <div class="form-errors" 
+                   ng-show="signinForm.password.$error && signinForm.$submitted"
+                   ng-messages="signinForm.password.$error"
+                   ng-messages-include="app/authentication/error-list.html">
+              </div>
+            </div>
+            <div class="padding">
+            <button class="button button-block button-positive waves-effect waves-button waves-light" type="submit">Login</button>
+        
+            </div>
+
+          </form>   
         <div class="button-bar">
             <button class="button button-small button-outline button-assertive light-bg icon-left ion-social-google waves-effect waves-button waves-light">Google+</button>
             <button class="button button-small button-outline button-positive light-bg icon-left ion-social-facebook waves-effect waves-button waves-light">Facebook</button>
@@ -51,17 +92,3 @@
    
   </ion-content>
 </ion-view>
-<script id="error-list.html" type="text/ng-template">  
-    <div class="error" ng-message="required">
-      <i class="ion-information-circled"></i> 
-      This field is required!
-    </div>
-    <div class="error" ng-message="minlength">
-      <i class="ion-information-circled"></i> 
-      Minimum length of this field is 5 characters!
-    </div>
-    <div class="error" ng-message="maxlength">
-      <i class="ion-information-circled"></i> 
-      Maximum length of this field is 20 characters!
-    </div>
-  </script>   
