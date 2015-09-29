@@ -13,36 +13,6 @@
        
             
 
-        <!--form name="authorizationForm" novalidate="" ng-submit="signIn(authorizationForm)"> 
-        
-          <div class="list">
-          
-            <label class="item item-input item-md-label" placeholder="Email" highlight-color="balanced" type="text" ng-class="{ 'has-errors' : authorizationForm.username.$invalid, 'no-errors' : authorizationForm.email.$valid}">
-              <span class="input-label">Username</span>
-              <input type="email" name="email" ng-model="authorization.email" ng-minlength="5" ng-maxlength="20" required>
-            </label>
-            
-            <div class="error-container" ng-show="authorizationForm.username.$error" ng-messages="authorizationForm.username.$error">
-              <div ng-include="app/authentication/error-list.html"></div>
-              <label>USer name is incorrect!!</label>
-            </div>
-            
-            <label class="item item-input item-md-label" placeholder="Password" highlight-color="energized" type="password" ng-class="{ 'has-errors' : authorizationForm.password.$invalid && authorizationForm.$submitted, 'no-errors' : authorizationForm.password.$valid  && authorizationForm.$submitted}">
-              <span class="input-label">Password</span>
-              <input type="password" name="password" ng-model="authorization.password" ng-minlength="5" ng-maxlength="20" required>
-            </label>
-            
-            <div class="error-container last-error-container" ng-show="authorizationForm.password.$error && authorizationForm.$submitted" ng-messages="authorizationForm.password.$error">
-                <div ng-messages-include="error-list.html"></div> 
-            </div>          
-            
-          </div>     
-          
-           <div class="padding">
-            <button class="button button-block button-positive waves-effect waves-button waves-light" type="submit">Login</button>
-        </div>
-            
-        </form-->
          <form name="signinForm" novalidate="" ng-submit="signIn(signinForm)">
 
             <div class="list">

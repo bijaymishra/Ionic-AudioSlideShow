@@ -35,8 +35,11 @@
     
    $scope.user = {
     username: '',
-    password : ''
+    email:'',
+    password : '',
+    postcode :''
   }
+
   $scope.signIn = function(form) {
     console.log(form);
     if(form.$valid) {
@@ -45,6 +48,16 @@
     }
   };
 
+
+
+ 
+  $scope.signUp = function(form) {
+    console.log(form);
+    if(form.$valid) {
+    console.log('Sign-Up', $scope.user.email);
+    $state.go('app.home');
+    }
+  };
 
 
     }

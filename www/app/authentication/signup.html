@@ -1,5 +1,6 @@
 <ion-view hide-nav-bar="true" class="signup view-container">
-    <ion-content class="signup_container HelveticaBody">
+    <ion-content class="signup_container HelveticaBody" style="background-image: url('../img/mountains.jpg');">
+    
     <div class="signup_header padding">
       <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item"><i class="icon ion-ios-arrow-back"></i> <span class="heading HelveticaHeading"><span class="title-center">SIGNUP</span></span>
      </div>
@@ -11,7 +12,63 @@
         <div class="or">
         <span></span><span>OR</span><span></span>
       </div>
-      <label class="item">
+
+      <form name="signupForm" novalidate="" ng-submit="signUp(signupForm)"> 
+        
+          <div class="list">
+              <label class="item item-input item-md-label" placeholder="name" highlight-color="balanced" type="text" 
+                     ng-class="{ 'has-error' : signupForm.username.$invalid}">
+                <span class="input-label">Username*</span>
+                <input type="text"
+                       name="username"
+                       ng-model="user.username" 
+                       ng-minlength="5" 
+                       ng-maxlength="10" 
+                       required>
+              </label>
+
+              <div class="form-errors" ng-messages="signupForm.username.$error" ng-messages-include="app/authentication/error-list.html">
+                <div class="form-error" ng-message="maxlength">This field is must be less than 10 characters</div>
+              </div>
+
+               <label class="item item-input item-md-label" placeholder="Email" highlight-color="balanced" type="text" 
+                     ng-class="{ 'has-error' : signupForm.username.$invalid}">
+    <span class="input-label">Email*</span>
+    <input type="email"
+           name="myEmail"
+           ng-model="user.myEmail"
+           required />
+  </label>
+
+  <div class="form-errors"
+  		 ng-show="signupForm.myEmail.$error && signupForm.$submitted"
+                   ng-messages="signupForm.myEmail.$error"
+                   ng-messages-include="app/authentication/error-list.html">
+                   <div class="form-error" ng-message="email">Not a valid Email Address!</div>
+
+               </div>
+
+
+              <label class="item item-input item-md-label" placeholder="PostCode" highlight-color="energized" type="tel" 
+                     ng-class="{ 'has-error-lr' : signupForm.password.$invalid  && signupForm.$submitted, 'valid-lr' : signupForm.PostCode.$valid  && signupForm.$submitted}">
+                <span class="input-label">Post-Code</span>
+                <input type="tel"
+                       name="PostCode"
+                       ng-model="user.PostCode" 
+                       ng-minlength="5" 
+                       ng-maxlength="9"
+                       >
+              </label>
+              </div>
+            <div class="padding">
+            <button class="button button-block button-positive waves-effect waves-button waves-light" type="submit">Signup</button>
+        
+            </div>
+
+        </form>
+        
+
+      <!--label class="item">
       	Name
       	<input type="text" required name="name">
       	Email ID
@@ -23,6 +80,6 @@
       <div class="padding">
             <button class="button button-block button-positive waves-effect waves-button waves-light" ng-click="login();">Signup</button>
         </div>
-      </div>
+      </div!-->
 </ion-content>
 </ion-view>
