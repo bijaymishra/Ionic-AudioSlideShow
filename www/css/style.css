@@ -129,7 +129,6 @@ span.icon.ion-android-person-add.signup {
         border: 1px solid rgba(102, 102, 102, 0.45);
     width: 100%;
     background-color: transparent;
-    margin-bottom: 15px;
     padding-left: 10px;
     }
 .signup .button-signup {
@@ -220,8 +219,9 @@ label.item.valid-lr {
 }
 
 .form-error {
-  padding: 2px 0 2px 16px;
+  padding: 0px 0 10px 12px;
   color: red;
+  font-size: 13px;
 }
 /*Error Message Design Ends */
 
