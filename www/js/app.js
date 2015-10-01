@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers','starter.services','ngMessages'])
+angular.module('starter', ['ionic', 'ngCookies','starter.controllers','starter.services','ngMessages'])
 
 .directive('script', function() {
     return {
@@ -22,6 +22,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services','ng
 
 
 .run(function($ionicPlatform) {
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -35,6 +36,22 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services','ng
       StatusBar.styleDefault();
     }
   });
+
+   /* Check login session
+    $rootScope.$on('$stateChangeStart', function (event, next, current) {
+        var userInfo = $cookieStore.get('userInfo');
+        if (!userInfo) {
+            // user not logged in | redirect to login
+            if (next.name !== "welcome") {
+                // not going to #welcome, we should redirect now
+                event.preventDefault();
+                $state.go('welcome');
+            }
+        } else if (next.name === "welcome") {
+            event.preventDefault();
+            $state.go('dashboard');
+        }
+    });*/
 })
 
 .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
