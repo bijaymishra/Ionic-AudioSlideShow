@@ -107,7 +107,7 @@
     $scope.gplusLogin = function () {
         var myParams = {
             // Replace client id with yours
-            'clientid': '357205617851-92l09ph7nlcmo09b2drekjj5bhjmcmom.apps.googleusercontent.com',
+            'clientid': '711459126511-68kqj1k2q7t9587j07c7h5i82lol3sm9.apps.googleusercontent.com',
             'cookiepolicy': 'single_host_origin',
             'callback': loginCallback,
             'approvalprompt': 'force',
@@ -120,6 +120,7 @@
                 var request = gapi.client.plus.people.get({'userId': 'me'});
                 request.execute(function (resp) {
                     console.log('Google+ Login RESPONSE: ' + angular.toJson(resp));
+                    $rootScope.userLoginName = resp.displayName;
                     var userEmail;
                     if (resp['emails']) {
                         for (var i = 0; i < resp['emails'].length; i++) {
@@ -138,7 +139,7 @@
                         user.gender = '';
                     }
                     user.profilePic = resp.image.url;
-                    $cookieStore.put('userInfo', user);
+                   // $cookieStore.put('userInfo', user);
                     $state.go('app.home');
                 });
             }

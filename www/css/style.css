@@ -223,6 +223,11 @@ label.item.valid-lr {
   color: red;
   font-size: 13px;
 }
+span.loggedUser {
+    font-size: 11px;
+    float: right;
+    color: #006193;
+}
 /*Error Message Design Ends */
 
 /* ----------- iPhone 4 and 4S ----------- */
