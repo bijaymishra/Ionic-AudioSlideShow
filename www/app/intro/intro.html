@@ -4,10 +4,21 @@
     <div class="medLogo_icon_container">
       <img class="logo" src="img/logo.png"/>
     </div>
-    <div class="loginIntro_btn_container clearfix HelveticaHeading">
+    <div class="login-btns">
+            <div id="social-links">
+                <ul>
+                    <li ng-click="fbLogin()"><span class="ifacebook"><img src="img/facebook.png"></span><a href="#" class="afacebook">sign in with facebook</a></li>
+                    <li ng-click="gplusLogin()"><span class="igoogleplus"><img src="img/googleplus.png"></span><a href="#" class="agoogleplus">sign in with google+</a></li>
+                </ul>
+            </div>
+            <hr id="login-divider" />
+              <div class="loginIntro_btn_container clearfix HelveticaHeading">
       <button class="button button-clear signup" ng-click="goTosignup();" ><span class="icon ion-android-person-add signup"></span>signUp</button>
       <button class="button button-clear login" ng-click="goTologin();" ><span class="icon ion-log-in login"></span>login</button>
 
     </div>
+            
+        </div>
+  
         </ion-content>
 </ion-view>

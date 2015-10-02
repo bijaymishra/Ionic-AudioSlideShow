@@ -19,13 +19,11 @@
      	$state.go('signup');
      }; 
 
-     
+     $scope.goToIntro = function(){
+        $state.go('intro');
+     }; 
 
-     $rootScope.$ionicGoBack = function() {
-    $ionicHistory.goBack();
     
-        };
-
          Waves.displayEffect();
     setTimeout(function() {
         Mi.motion.panInLeft({
