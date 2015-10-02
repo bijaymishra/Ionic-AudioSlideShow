@@ -65,7 +65,7 @@
      * Facebook and Google
      */
     // FB Login
-   /* $scope.fbLogin = function () {
+    $scope.fbLogin = function () {
         FB.login(function (response) {
             if (response.authResponse) {
                 getUserInfo();
@@ -100,7 +100,7 @@
                 });
             });
         }
-    };*/
+    };
     // END FB Login
 
     // Google Plus Login
