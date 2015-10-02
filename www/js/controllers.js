@@ -74,7 +74,7 @@ $scope.$on("$ionicView.enter", function() {
 })
 
 
-.controller('sample', function($scope,$timeout,$ionicHistory,$state,$window,$ionicLoading,$stateParams,Chapters) {
+.controller('sample', function($scope,$rootScope,$timeout,$ionicHistory,$state,$window,$ionicLoading,$stateParams,Chapters) {
 
    var chapter = Chapters.get($stateParams.chapterId);
   var lesson = chapter.lessons[$stateParams.lessonId];
@@ -84,7 +84,12 @@ $scope.$on("$ionicView.enter", function() {
    {
     //console.log($scope.sections[i]);
    }
+
     
+ $rootScope.$ionicGoBack = function() {
+    $ionicHistory.goBack();
+    
+        };
      $scope.$on("$ionicView.afterLeave", function() {
      
 
