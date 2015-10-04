@@ -364,6 +364,10 @@ span.loggedUser {
     width: 100%;
     padding: 0px 100px;
 }
+.intro_container .medLogo_icon_container {
+    height: 25%;
+    padding-top: 3%;
+}
 
 }
 
@@ -407,6 +411,10 @@ span.loggedUser {
 .logo {
     width: 100%;
     padding: 0px 100px;
+}
+.intro_container .medLogo_icon_container {
+    height: 25%;
+    padding-top: 3%;
 }
 
 }
@@ -452,6 +460,10 @@ span.loggedUser {
     width: 100%;
     padding: 0px 100px;
 } 
+.intro_container .medLogo_icon_container {
+    height: 25%;
+    padding-top: 3%;
+}
 
 }
 
