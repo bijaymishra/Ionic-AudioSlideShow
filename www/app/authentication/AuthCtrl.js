@@ -1,7 +1,17 @@
 (function () {
     'use strict';
 
-    angular.module('starter').controller('AuthCtrl', ['$scope','$state','$rootScope','$cookieStore','$ionicHistory', AuthCtrl]);
+    angular.module('starter').controller('AuthCtrl', ['$scope','$state','$rootScope','$cookieStore','$ionicHistory', AuthCtrl]).directive('focusMe', function($timeout) {
+  return {
+    link: function(scope, element, attrs) {
+
+      $timeout(function() {
+        element[0].focus(); 
+      },750);
+    }
+  };
+});
+
 
     function AuthCtrl($scope,$state,$rootScope,$ionicHistory,$cookieStore ) {       
      
@@ -56,6 +66,7 @@
     $state.go('app.home');
     }
   };
+
 
 
    /**
