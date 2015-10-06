@@ -141,17 +141,9 @@ angular.module('starter', ['ionic', 'ngCookies','starter.controllers','starter.c
         controller: 'sample'
       }
     }
-  })
- 
-  .state('app.player', {
-    url: '/player',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/slide-transitions.html',
-        controller: 'sample'
-      }
-    }
   });
+ 
+  
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('intro');
 });
