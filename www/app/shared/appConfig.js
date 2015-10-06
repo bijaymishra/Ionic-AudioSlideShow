@@ -12,7 +12,7 @@
             'API_VERSION': '1',
             'GA_enabled' : false,
             'API_USING': 'Staging',
-            'API_URL': 'https://52.64.209.238/api/DiabeticPumps/',// staging url
+            'API_URL': 'http://52.64.209.238/api/DiabaticPump/',// staging url
            
 
             

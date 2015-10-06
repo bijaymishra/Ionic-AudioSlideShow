@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('starter').controller('AuthCtrl', ['$scope','$state','$rootScope','$cookieStore','$ionicHistory', AuthCtrl]).directive('focusMe', function($timeout) {
+    angular.module('starter').controller('AuthCtrl', ['$scope','$state','$rootScope','$cookieStore','$ionicHistory','serviceApi', AuthCtrl]).directive('focusMe', function($timeout) {
   return {
     link: function(scope, element, attrs) {
 
@@ -13,7 +13,7 @@
 });
 
 
-    function AuthCtrl($scope,$state,$rootScope,$ionicHistory,$cookieStore ) {       
+    function AuthCtrl($scope,$state,$rootScope,$ionicHistory,$cookieStore,serviceApi) {       
      
      $scope.login = function(){
      	$state.go('app.home');
@@ -48,13 +48,38 @@
     postcode :''
   }
 
-  $scope.signIn = function(form) {
-    console.log(form);
-    if(form.$valid) {
-    console.log('Sign-In', $scope.user.username);
-    $state.go('app.home');
-    }
-  };
+ 
+
+  $scope.signIn = function(form)
+        {
+             if(form.$valid) {
+            var datatosend = {
+                "Name": $scope.user.username,
+                "password": $scope.user.password
+               
+            };
+              serviceApi.loginCTRL(datatosend)
+            .then(function (response) {
+               if (response == '204') {
+                   $scope.loginError = true;
+                }
+               else {
+                        if(response == "Invalid User"){
+                            alert(response);
+                        }else{
+                           $scope.userName = response;
+                           console.log($scope.userName);
+                           localStorage.setItem("Zipcode",response);
+                           localStorage.setItem("isLogin","true");
+                           $state.go('app.home', { userName: $scope.userName });
+                        }
+            }
+            },
+            function (err) {
+
+            });
+        };
+    }    
 
 
 
@@ -63,9 +88,31 @@
     console.log(form);
     if(form.$valid) {
     console.log('Sign-Up', $scope.user.email);
-    $state.go('app.home');
+
+    //signup using service call
+
+  var datatosend = {
+                "Name": $scope.user.username,
+                "Email": $scope.user.myEmail,
+                "ZipCode": $scope.user.PostCode
+               
+            };
+
+  serviceApi.signUpCTRL(datatosend)
+            .then(function (response) {
+                if (response == '204') {
+                }
+                else {
+                   localStorage.setItem("isLogin", "true");
+                    $state.go('app.home');
+                }
+            });
+    
     }
   };
+
+
+  
 
 
 

@@ -1,25 +1,12 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('starter').factory('serviceApi', ['$http', '$rootScope', '$q', '$ionicLoading', '$cordovaDevice', 'GENERAL_CONFIG', 'commonHelper', 'applicationLocalStorageService', serviceApi]);
+    angular.module('starter').factory('serviceApi', ['$http', '$rootScope', '$q', '$ionicLoading','GENERAL_CONFIG',serviceApi]);
 
-    function serviceApi($http, $rootScope, $q, $ionicLoading, $cordovaDevice, GENERAL_CONFIG, commonHelper, applicationLocalStorageService) {
+    function serviceApi($http, $rootScope, $q, $ionicLoading, GENERAL_CONFIG) {
 
-        // To get Device information object for API call. 
-        function getDeviceInformation() {
-            var deviceInfomation = commonHelper.getDeviceInformation();
-
-            // Create API object
-            var data = {
-                Model: deviceInfomation.model,
-                Version: deviceInfomation.version,
-                Uuid: deviceInfomation.uuid,
-                Platform: deviceInfomation.platform,
-            };
-
-            return data
-        }
-
+       
+       
         // Common method to peroform post http call.
         function doPostHttp(functionName, url, data) {
             var deferred = $q.defer();
@@ -55,6 +42,7 @@
             $http.get(url, { params: data })
                 .success(function (response) {
                     console.log(functionName + "Success");
+                    console.log(response);
 
                     busyCursorEnd();
 
@@ -120,7 +108,9 @@
         function loginCTRL(user) {
             console.log("calling loginCTRL");
 
-            var url = GENERAL_CONFIG.API_URL + "users/" + user + "?key=" + GENERAL_CONFIG.APP_KEY;
+            var url = GENERAL_CONFIG.API_URL + "CheckUserDetails?username=" + user.Name + "&password=" + user.password;
+
+            //var url = "http://52.64.209.238/api/DiabaticPump/CheckUserDetails?username=yariva&password=fdgghfh";
 
             // Create data for API call 
             var data = {};
@@ -129,11 +119,13 @@
         }
 
         function signUpCTRL(data) {
-            var url = GENERAL_CONFIG.API_URL + "Users?key=" + GENERAL_CONFIG.APP_KEY;
+           var url = GENERAL_CONFIG.API_URL + "SendNewUser?username="+data.Name+'&emailid='+data.Email+'&postcode='+data.ZipCode+'&password=Shrutiv';
+            console.log(data);
+           /* var url ="http://52.64.209.238/api/DiabaticPump/SendNewUser?username=Shrutiv&emailid=Shrutiv%40abc.com&postcode=123456&password=Shrutiv%407612";*/
 
             // Create data for API call 
             //var data = {};
-            return doPutHttpWithData(data, url, "signUpCTRL");
+            return doGetHttp(data, url, "signUpCTRL");
         }
 
      
