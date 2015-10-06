@@ -69,7 +69,7 @@
                         }else{
                            $scope.userName = response;
                            console.log($scope.userName);
-                           localStorage.setItem("Zipcode",response);
+                           localStorage.setItem("Zipcode",response.ZipCode);
                            localStorage.setItem("isLogin","true");
                            $state.go('app.home', { userName: $scope.userName });
                         }
