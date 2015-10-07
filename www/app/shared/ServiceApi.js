@@ -119,7 +119,7 @@
         }
 
         function signUpCTRL(data) {
-           var url = GENERAL_CONFIG.API_URL + "SendNewUser?username="+data.Name+'&emailid='+data.Email+'&postcode='+data.ZipCode+'&password='+data.password;
+           var url = GENERAL_CONFIG.API_URL + "SendNewUser?username="+data.Name+'&emailid='+data.Email+'&postcode='+data.ZipCode+'&password='+data.Password;
             console.log(data);
            /* var url ="http://52.64.209.238/api/DiabaticPump/SendNewUser?username=Shrutiv&emailid=Shrutiv%40abc.com&postcode=123456&password=Shrutiv%407612";*/
 

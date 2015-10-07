@@ -1,7 +1,7 @@
-(function () {
++(function () {
     'use strict';
 
-    angular.module('starter').controller('AuthCtrl', ['$scope','$state','$rootScope','$cookieStore','$ionicHistory','serviceApi', AuthCtrl]).directive('confirmPwd', function($interpolate, $parse) {
+    angular.module('starter').controller('AuthCtrl', ['$scope','$state','$rootScope','$cookieStore','$ionicHistory','serviceApi','$ionicPopup', AuthCtrl]).directive('confirmPwd', function($interpolate, $parse) {
   return {
     require: 'ngModel',
     link: function(scope, elem, attr, ngModelCtrl) {
@@ -23,7 +23,7 @@
 });
 
 
-    function AuthCtrl($scope,$state,$rootScope,$ionicHistory,$cookieStore,serviceApi) {       
+    function AuthCtrl($scope,$state,$rootScope,$ionicHistory,$cookieStore,serviceApi,$ionicPopup) {       
      
      $scope.login = function(){
      	$state.go('app.home');
@@ -54,8 +54,8 @@
    $scope.user = {
     username: '',
     email:'',
-    password : '',
-    postcode :''
+    password : ''
+     
   }
 
  
@@ -70,12 +70,9 @@
             };
               serviceApi.loginCTRL(datatosend)
             .then(function (response) {
-               if (response == '204') {
-                   $scope.loginError = true;
-                }
-               else {
-                        if(response == "Invalid User"){
-                            alert(response);
+                
+               if(response == 'Invalid User'){
+                            $scope.showLoginInvalid(response);
                         }else{
                            $scope.userName = response;
                            console.log($scope.userName);
@@ -83,15 +80,19 @@
                            localStorage.setItem("isLogin","true");
                            $state.go('app.home', { userName: $scope.userName });
                         }
-            }
-            },
+                        },
             function (err) {
 
             });
         };
     }    
 
-
+ $scope.showLoginInvalid = function(response) {
+     var alertPopup = $ionicPopup.alert({
+       title: 'Login Status',
+       template: response+' !'
+             });
+         }     
   
    $scope.registerData = {
     username: '',
@@ -117,17 +118,36 @@
 
   serviceApi.signUpCTRL(datatosend)
             .then(function (response) {
-                if (response == '204') {
+                if (response == 'success') {
+                    $scope.showSignupSuccess(response);
                 }
                 else {
-                   localStorage.setItem("isLogin", "true");
-                    $state.go('app.home');
+
+                    $scope.showSignupExist(response);
+            
                 }
             });
     
     }
   };
-
+   $scope.showSignupSuccess = function(response) {
+     var alertPopup = $ionicPopup.alert({
+       title: 'Signup Status',
+       template: 'Sign up ' + response+' !'
+             });
+             alertPopup.then(function(res) {
+               $state.go('login');
+             });
+         }
+     $scope.showSignupExist = function(response) {
+     var alertPopup = $ionicPopup.alert({
+       title: 'Signup Status',
+       template: 'Sign up user ' + response+' !'
+             });
+             alertPopup.then(function(res) {
+               $state.go('login');
+             });
+         }     
 
   
 
