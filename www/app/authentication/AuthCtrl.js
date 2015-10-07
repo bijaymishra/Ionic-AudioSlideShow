@@ -1,15 +1,25 @@
 (function () {
     'use strict';
 
-    angular.module('starter').controller('AuthCtrl', ['$scope','$state','$rootScope','$cookieStore','$ionicHistory','serviceApi', AuthCtrl]).directive('focusMe', function($timeout) {
+    angular.module('starter').controller('AuthCtrl', ['$scope','$state','$rootScope','$cookieStore','$ionicHistory','serviceApi', AuthCtrl]).directive('confirmPwd', function($interpolate, $parse) {
   return {
-    link: function(scope, element, attrs) {
+    require: 'ngModel',
+    link: function(scope, elem, attr, ngModelCtrl) {
 
-      $timeout(function() {
-        element[0].focus(); 
-      },750);
+      var pwdToMatch = $parse(attr.confirmPwd);
+      var pwdFn = $interpolate(attr.confirmPwd)(scope);
+
+      scope.$watch(pwdFn, function(newVal) {
+          ngModelCtrl.$setValidity('password', ngModelCtrl.$viewValue == newVal);
+      })
+
+      ngModelCtrl.$validators.password = function(modelValue, viewValue) {
+        var value = modelValue || viewValue;
+        return value == pwdToMatch(scope);
+      };
+
     }
-  };
+  }
 });
 
 
@@ -69,7 +79,7 @@
                         }else{
                            $scope.userName = response;
                            console.log($scope.userName);
-                           localStorage.setItem("Zipcode",response.ZipCode);
+                          // localStorage.setItem("Zipcode",response.ZipCode);
                            localStorage.setItem("isLogin","true");
                            $state.go('app.home', { userName: $scope.userName });
                         }
@@ -82,7 +92,13 @@
     }    
 
 
-
+  
+   $scope.registerData = {
+    username: '',
+    email:'',
+    password : '',
+    postcode :''
+  }
  
   $scope.signUp = function(form) {
     console.log(form);
@@ -92,9 +108,10 @@
     //signup using service call
 
   var datatosend = {
-                "Name": $scope.user.username,
-                "Email": $scope.user.myEmail,
-                "ZipCode": $scope.user.PostCode
+                "Name": $scope.registerData.username,
+                "Email": $scope.registerData.email,
+                "ZipCode": $scope.registerData.postcode,
+                "Password":$scope.registerData.password
                
             };
 

@@ -13,7 +13,7 @@
         <span></span><span>OR</span><span></span>
       </div>
 
-      <form name="signupForm" novalidate="" ng-submit="signUp(signupForm)"> 
+      <!--form name="signupForm" novalidate="" ng-submit="signUp(signupForm)"> 
         
           <div class="list">
               <label class="item item-input item-md-label" placeholder="name" highlight-color="balanced" type="text" 
@@ -59,13 +59,75 @@
                        ng-maxlength="9"
                        >
               </label>
+                <label class="item item-input item-md-label">
+      <span class="input-label">Password</span>
+      <input type="password" name="password" ng-model="user.password" required />
+      <div class="form-errors" ng-messages="signupForm.password.$error" ng-if='signupForm.password.$touched'>
+        <span class="form-error" ng-message="required">Please enter the password</span>
+      </div>
+    </label>
+    <label class="item item-input item-md-label">
+      <span class="input-label">Password confirmation</span>
+      <input type="password" name="password_confirmation" ng-model="user.password_confirmation" required="" confirm-pwd="registerData.password" />
+      <div class="form-errors" ng-messages="signupForm.password_confirmation.$error" ng-if='signupForm.password_confirmation.$touched'>
+        <span class="form-error" ng-message="required">Password confirmation required</span>
+        <span class="form-error" ng-message="password">Password different</span>
+      </div>
+    </label>
               </div>
             <div class="padding">
             <button class="button button-block button-positive waves-effect waves-button waves-light" type="submit">Signup</button>
         
             </div>
 
-        </form>
+        </form-->
+          <form name="autentication_form" novalidate="" ng-submit="signUp(autentication_form)">
+            <label class="item item-input item-md-label">
+      <span class="input-label">Username</span>
+      <input type="text" name="username" ng-model="registerData.username" required="" />
+      <div class="form-errors" ng-messages="autentication_form.username.$error" ng-if='autentication_form.username.$touched'>
+        <span class="form-error" ng-message="required">You did not enter the username</span>
+          
+      </div>
+    </label>
+    <label class="item item-input item-md-label">
+      <span class="input-label">Email</span>
+      <input type="email" name="email" ng-model="registerData.email" required="" />
+      <div class="form-errors" ng-messages="autentication_form.email.$error" ng-if='autentication_form.email.$touched'  ng-messages-include="app/authentication/error-list.html">
+        <span class="form-error" ng-message="required">You did not enter the email</span>
+          <span class="form-error" ng-message="email">Not a valid Email Address!</span>
+      </div>
+    </label>
+    <label class="item item-input item-md-label">
+      <span class="input-label">Password</span>
+      <input type="password" name="password" ng-model="registerData.password" required />
+      <div class="form-errors" ng-messages="autentication_form.password.$error" ng-if='autentication_form.password.$touched'>
+        <span class="form-error" ng-message="required">Please enter the password</span>
+      </div>
+    </label>
+    <label class="item item-input item-md-label">
+      <span class="input-label">Password confirmation</span>
+      <input type="password" name="password_confirmation" ng-model="registerData.password_confirmation" required="" confirm-pwd="registerData.password" />
+      <div class="form-errors" ng-messages="autentication_form.password_confirmation.$error" ng-if='autentication_form.password_confirmation.$touched'>
+        <span class="form-error" ng-message="required">Password confirmation required</span>
+        <span class="form-error" ng-message="password">Password different</span>
+      </div>
+    </label>
+     <label class="item item-input item-md-label">
+      <span class="input-label">Postcode</span>
+      <input type="text" name="postcode" ng-model="registerData.postcode" required=""/>
+      <div class="form-errors" ng-messages="autentication_form.postcode.$error" ng-if='autentication_form.postcode.$touched'>
+        <span class="form-error" ng-message="required">PostCode required</span>
+       
+      </div>
+    </label>
+
+      <div class="padding">
+            <button class="button button-block button-positive waves-effect waves-button waves-light" type="submit">Signup</button>
+        
+            </div>
+  </form>
+
         
 
       <!--label class="item">
