@@ -17,7 +17,7 @@
 
             <div class="list">
               <label class="item item-input item-md-label" placeholder="Email" highlight-color="balanced" type="text" 
-                     ng-class="{ 'has-error' : signinForm.username.$invalid}">
+                     ng-class="{ 'has-error' : signinForm.username.$invalid}"> 
                 <span class="input-label">Username</span>
                 <input type="text"
                        name="username"
@@ -25,7 +25,7 @@
                        required>
               </label>
 
-              <div class="form-errors" ng-messages="signinForm.username.$error" ng-messages-include="app/authentication/error-list.html">
+              <div class="form-errors" ng-messages="signinForm.username.$error" ng-if='signinForm.username.$touched' ng-messages-include="app/authentication/error-list.html">
                 <div class="form-error" ng-message="maxlength">This field is must be less than 10 characters</div>
               </div>
 
