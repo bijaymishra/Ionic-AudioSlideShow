@@ -5,19 +5,19 @@
 
     function PlaylistsCtrl($scope,$state,$rootScope,$ionicHistory,serviceApi ) {       
      
-   $scope.allChpters  = function(){
+   $scope.getLessons =function(id){
 
-   	serviceApi.getChpters().then(function (response) {
-$scope.playlists = []; 
-   		$scope.playlists = response;
-   		console.log($scope.playlists);
-   		$state.go('app.playlists');
+   	serviceApi.getLessonsData(id).then(function (response) {
+    $scope.lessionsList = []; 
+   		$rootScope.lessons = response;
+   		console.log($scope.lessons);
+   		$state.go('app.chapter-detail');
    	});
 
    }
 
  			
+}
 
-
-    }
+    
 })();

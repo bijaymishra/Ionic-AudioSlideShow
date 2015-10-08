@@ -103,6 +103,8 @@
             loginCTRL: loginCTRL,
             signUpCTRL: signUpCTRL,
             getChpters : getChpters,
+            getLessonsData : getLessonsData,
+            playLssonsData : playLssonsData
          };
 
   
@@ -134,7 +136,23 @@
 
             return doGetHttpWithoutData ('getChpters ', url);
         }
-     
+        
+           function getLessonsData(data) {
+           var url = GENERAL_CONFIG.API_URL + "GetLessonsByChapterId?ChapterId="+data.Id;
+            //console.log(data);
+
+            
+         
+            return doGetHttp(data, url, "signUpCTRL ");
+        }
+         function playLssonsData(data) {
+           var url = GENERAL_CONFIG.API_URL + "GetSectionbyLessonId?LessonId="+data;
+            //console.log(data);
+
+            http://52.64.209.238/api/DiabaticPump/GetSectionbyLessonId?LessonId=1
+         
+            return doGetHttp(data, url, "signUpCTRL ");
+        }
 
 
        

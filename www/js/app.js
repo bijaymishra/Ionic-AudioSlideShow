@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'ngCookies','starter.controllers','starter.config','starter.services','ngMessages'])
+angular.module('starter', ['ionic', 'ngCookies','starter.config','starter.services','ngMessages'])
 
 .directive('script', function() {
     return {
@@ -62,7 +62,7 @@ angular.module('starter', ['ionic', 'ngCookies','starter.controllers','starter.c
     url: '/app',
     abstract: false,
     templateUrl: 'app/menu/menu.html',
-    controller: 'AppCtrl'
+    //controller: 'AppCtrl'
   })
 
     .state('intro', {
@@ -96,7 +96,7 @@ angular.module('starter', ['ionic', 'ngCookies','starter.controllers','starter.c
       views: {
         'menuContent': {
           templateUrl: 'app/home/home.html',
-          controller: 'PlaylistsCtrl'
+          controller: 'HomeCtrl'
         }
       }
     })
@@ -113,7 +113,6 @@ angular.module('starter', ['ionic', 'ngCookies','starter.controllers','starter.c
 
     .state('app.playlists', {
       url: '/playlists',
-      cache: true,
       views: {
         'menuContent': {
           templateUrl: 'app/chapters/playlists.html',
@@ -126,7 +125,7 @@ angular.module('starter', ['ionic', 'ngCookies','starter.controllers','starter.c
       cache:false,
       views: {
         'menuContent': {
-          templateUrl: 'app/chapters/chapter-details.html',
+          templateUrl: 'app/chapter-detail/chapter-details.html',
           controller: 'ChapterDetailCtrl'
         }
       }
@@ -138,7 +137,7 @@ angular.module('starter', ['ionic', 'ngCookies','starter.controllers','starter.c
       cache: false,
       'menuContent': {
         templateUrl: 'app/player/part1.html',
-        controller: 'sample'
+        controller: 'playerCtrl'
       }
     }
   });
