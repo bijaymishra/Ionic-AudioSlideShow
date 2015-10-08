@@ -102,6 +102,7 @@
         return {
             loginCTRL: loginCTRL,
             signUpCTRL: signUpCTRL,
+            getChpters : getChpters,
          };
 
   
@@ -115,7 +116,7 @@
             // Create data for API call 
             var data = {};
 
-            return doGetHttpWithoutData("loginCTRL", url);
+            return doGetHttpWithoutData("loginCTRL ", url);
         }
 
         function signUpCTRL(data) {
@@ -125,9 +126,14 @@
 
             // Create data for API call 
             //var data = {};
-            return doGetHttp(data, url, "signUpCTRL");
+            return doGetHttp(data, url, "signUpCTRL ");
         }
 
+        function getChpters(){
+            var url = GENERAL_CONFIG.API_URL+'GetChapterDetail';
+
+            return doGetHttpWithoutData ('getChpters ', url);
+        }
      
 
 

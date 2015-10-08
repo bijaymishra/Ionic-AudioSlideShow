@@ -22,11 +22,11 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope,$state,Chapters) {
+/*.controller('PlaylistsCtrl', function($scope,$state,Chapters) {
   $scope.playlists = Chapters.all();
 
 
-})
+})*/
 
 .controller('ChapterDetailCtrl', function($scope,$state,$window,$timeout, $ionicHistory,$stateParams,$rootScope,$ionicLoading, Chapters) {
   $scope.chapter = Chapters.get($stateParams.chapterId);

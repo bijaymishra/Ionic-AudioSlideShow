@@ -96,7 +96,7 @@ angular.module('starter', ['ionic', 'ngCookies','starter.controllers','starter.c
       views: {
         'menuContent': {
           templateUrl: 'app/home/home.html',
-          //controller: 'PlaylistsCtrl'
+          controller: 'PlaylistsCtrl'
         }
       }
     })
