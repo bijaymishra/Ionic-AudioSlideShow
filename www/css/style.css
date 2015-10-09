@@ -172,6 +172,27 @@ span.icon.ion-android-person-add.signup {
     text-align: center;
     vertical-align: initial;
 }
+.introImg {
+    padding: 10px;
+    position: relative;
+    height: 216px;
+    display: block;
+}
+img.introImg {
+    padding: 0px 15%;
+    position: relative;
+    height: 210px;
+    display: block;
+}
+span.introText {
+    font-weight: 500;
+    font-family: monospace;
+    position: relative;
+    color: #0566A3;
+    font-size: xx-large;
+    padding: 0px 0 0 46%;
+
+}
 /*------ Signup start -----*/
 .signup .button .icon {
     color: #000;
@@ -321,6 +342,12 @@ span.loggedUser {
     width: 100%;
     padding: 0px 100px;
 }
+img.introImg {
+    padding: 0px 25%;
+    position: relative;
+    height: 210px;
+    display: block;
+}
 }
 
 /* ----------- iPhone 5 and 5S ----------- */
@@ -339,6 +366,10 @@ span.loggedUser {
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
+    span.introText {
+          padding: 0px 0 0 40%;
+
+    }
 }
 
 /* Landscape */
@@ -368,6 +399,12 @@ span.loggedUser {
     height: 25%;
     padding-top: 3%;
 }
+img.introImg {
+    padding: 0px 30%;
+    position: relative;
+    height: 210px;
+    display: block;
+}
 
 }
 
@@ -387,7 +424,9 @@ span.loggedUser {
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) { 
-
+    img.introImg {
+    padding: 0px 20%;
+  }
 }
 
 /* Landscape */
@@ -416,7 +455,21 @@ span.loggedUser {
     height: 25%;
     padding-top: 3%;
 }
+ img.introImg {
+    padding: 0px 33%;
+  }
 
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 600px) 
+  and (max-device-width: 900px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+    img.introImg {
+    padding: 0px 30%;
+  }
 }
 
 /* ----------- iPhone 6+ ----------- */
@@ -464,7 +517,9 @@ span.loggedUser {
     height: 25%;
     padding-top: 3%;
 }
-
+img.introImg {
+    padding: 0px 35%;
+  }
 }
 
 /* ----------- iPad mini ----------- */
@@ -487,6 +542,14 @@ span.loggedUser {
     width: 100%;
     padding: 0 50px;
   }
+  img.introImg {
+    padding: 0px 35%;
+  }
+  span.introText {
+          padding: 0px 0 0 40%;
+          font-size: 50px;
+    }  
+
  
 }
 
@@ -505,6 +568,10 @@ span.loggedUser {
     top: -211px;
     position: relative;
 }
+img.introImg {
+    padding: 0px 39%;
+  }
+
 
 }
 
@@ -530,6 +597,10 @@ span.loggedUser {
     width: 100%;
     padding: 0px 150px;
 } 
+img.introImg {
+    padding: 0px 39%;
+  }
+
 
 }
 
@@ -558,6 +629,9 @@ span.loggedUser {
     max-width: 70%;
     margin: 0 auto;
 }
+img.introImg {
+    padding: 0px 42%;
+  }
 }
 
 /* ----------- Non-Retina low resolution Screens ----------- */
@@ -586,6 +660,13 @@ span.loggedUser {
     margin: 0 auto;
 
 }
+img.introImg {
+    padding: 0px 42%;
+  }
+span.introText {
+          padding: 0px 0 0 40%;
+          font-size: 50px;
+    }  
 }
 
 /* ----------- Retina Screens ----------- */
@@ -615,6 +696,10 @@ span.loggedUser {
     max-width: 70%;
     margin: 0 auto;
 }
+img.introImg {
+    padding: 0px 42%;
+  }
+
 }
 
 
