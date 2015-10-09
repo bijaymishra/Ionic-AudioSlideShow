@@ -189,7 +189,6 @@ span.introText {
     font-family: monospace;
     position: relative;
     color: #0566A3;
-    font-size: xx-large;
     padding: 0px 0 0 46%;
 
 }
@@ -697,7 +696,7 @@ span.introText {
     margin: 0 auto;
 }
 img.introImg {
-    padding: 0px 42%;
+    padding: 0px 36%;
   }
 
 }
