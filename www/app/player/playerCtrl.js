@@ -7,7 +7,7 @@
     function playerCtrl($scope,$state,$rootScope,$ionicHistory,serviceApi ) {       
  
 
- $scope.$on("$ionicView.enter", function() {
+ $scope.$on("$ionicView.beforeEnter", function() {
 
    setTimeout(function(){
    // document.getElementsByClassName("audio")[0].play();
@@ -44,18 +44,24 @@
         // transitionSpeed: 'slow',
         // backgroundTransition: 'slide'
         dependencies: [
-         // Remote control your reveal.js presentation using a touch device
-        { src: 'plugin/audio-slideshow/audio-slideshow.js', async: false },
 
-    ]
+        // ... 
+
+        { src: 'plugin/audio-slideshow/slideshow-recorder.js', condition: function( ) { return !!document.body.classList; } },              
+        { src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } }
+    ]   
       });
    Reveal.sync(); 
- }, 0);
+ }, 100);
 });
 
-  $scope.$on("$ionicView.afterLeave", function() {
-    $ionicHistory.clearCache();
+  $scope.$on("$ionicView.enter", function() {
     $state.go($state.current, {}, {reload: true});
+    Reveal.addEventListener( 'slidechanged', function( event ) {
+      Reveal.sync();
+      
+    });
+    
   });
 
       
