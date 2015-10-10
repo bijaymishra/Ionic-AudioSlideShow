@@ -56,11 +56,11 @@
 });
 
   $scope.$on("$ionicView.enter", function() {
-    $state.go($state.current, {}, {reload: true});
-    Reveal.addEventListener( 'slidechanged', function( event ) {
+   $state.go($state.current, {}, {reload: true});
+    
       Reveal.sync();
       
-    });
+   
     
   });
 

@@ -25,11 +25,11 @@
            <span class="icon menuicon"><span class="icon ion-ios-information"></span></span> About
         </ion-item>
 
-        <ion-item nav-clear menu-close href="#/app/playlists" active class="item item-icon-left">
-           <span class="icon menuicon"><span class="icon ion-android-list"></span></span> Playlist
+        <ion-item nav-clear menu-close ng-click="allChpters()" active class="item item-icon-left ng-hide">
+           <span class="icon menuicon"><span class="icon ion-android-list"></span></span> Chapters
         </ion-item>
 
-        <ion-item nav-clear menu-close href="#/app/login" ng-click="login()" active class="item item-icon-left">
+        <ion-item nav-clear menu-close href="#/app/login" ng-click="login()" active class="item item-icon-left ng-hide">
            <span class="icon menuicon"><span class="icon ion-log-out"></span></span> Log Out <span class="loggedUser">{{userLoginName}}</span>
         </ion-item>
 

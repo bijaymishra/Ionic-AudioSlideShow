@@ -132,7 +132,7 @@ angular.module('starter', ['ionic', 'ngCookies','starter.config','starter.servic
     })
 
   .state('app.part1', {
-    url: '/playlists/:chapterId/:lessonId',
+    url: '/player',
     views: {
       cache: false,
       'menuContent': {
@@ -144,5 +144,5 @@ angular.module('starter', ['ionic', 'ngCookies','starter.config','starter.servic
  
   
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('intro');
+  $urlRouterProvider.otherwise('app/home');
 });
