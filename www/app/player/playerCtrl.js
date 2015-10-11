@@ -6,14 +6,12 @@
 
     function playerCtrl($scope,$state,$rootScope,$ionicHistory,serviceApi ) {       
  
-
- $scope.$on("$ionicView.beforeEnter", function() {
-
-   setTimeout(function(){
-   // document.getElementsByClassName("audio")[0].play();
-
+  $scope.$on("$ionicView.enter", function() {
+     setTimeout(function(){
+    document.getElementsByClassName("audio")[0].play();
+}, 500);
  
-  /*Reveal.initialize({
+  Reveal.initialize({
         controls: true,
         //progress: true,
         //history: true,
@@ -24,47 +22,24 @@
         audioPlayerOpacity: 0.5,
 
 
+                 //transition: 'slide',
+                // transitionSpeed: 'slow',
                  backgroundTransition: 'slide'
-            });*/
-
-
-   Reveal.initialize({
-    
-    controls: true,
-        progress: true,
-        //history: true,
-        center: true,
-        audioPrefix: 'audio/',
-        audioSuffix: '.mp3',
-        audioDefaultDuration: 5,
-        audioPlayerOpacity: 0.5,
-
-
-        // transition: 'slide',
-        // transitionSpeed: 'slow',
-        // backgroundTransition: 'slide'
-        dependencies: [
-
-        // ... 
-
-        { src: 'plugin/audio-slideshow/slideshow-recorder.js', condition: function( ) { return !!document.body.classList; } },              
-        { src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } }
-    ]   
-      });
-   Reveal.sync(); 
- }, 100);
-});
-
-  $scope.$on("$ionicView.enter", function() {
-   $state.go($state.current, {}, {reload: true});
-    
-      Reveal.sync();
-      
-   
-    
+            });
+  Reveal.sync();
   });
 
-      
+Reveal.addEventListener( 'slidechanged', function( event ) {
+  var state = Reveal.getState();
+  var getaudio
+  console.log(state);
+    setTimeout(function(){
+    document.getElementsByClassName("audio")[state.indexh].play();
+    event.stopPropagation();
+
+}, 1500);
+} );
+
 }
 
     

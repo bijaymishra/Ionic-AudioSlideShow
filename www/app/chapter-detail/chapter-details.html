@@ -1,9 +1,11 @@
 <ion-view  view-title= '{{chapterName}}' align-title="center">
+  <ion-content>
  
       <ion-list>
       <ion-item ng-repeat="lesson in lessons" type="item-text-wrap" ng-click="playLesson({{lesson.Id}});">
         {{lesson.Name}}
       </ion-item>
     </ion-list>
+  </ion-content>
   
 </ion-view>

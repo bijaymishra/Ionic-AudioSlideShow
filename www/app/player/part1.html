@@ -7,11 +7,13 @@
 
 			<div class="slides">
 
-				<section ng-repeat = "section in sections" data-background="{{section.Img}}" data-audio-text="{{section.Caption}}" data-audio-src='{{section.Sound}}'>
+				<section ng-repeat = "section in sections" data-background="{{section.Img}}">
 				<p class="slidetext">
 					{{section.Caption}} 
 				</p>
-				
+				<ion-footer-bar align-title="left" class="bar-assertive" >
+				<audio class="audio" preload="none" src='{{section.Sound}}' controls></audio>
+				</ion-footer-bar>
 			</section>
 
 		</div>
