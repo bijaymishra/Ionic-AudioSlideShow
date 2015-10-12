@@ -26,7 +26,7 @@
                 // transitionSpeed: 'slow',
                  backgroundTransition: 'slide'
             });
-  Reveal.sync();
+  Reveal.slide( 0 );
   });
 
 Reveal.addEventListener( 'slidechanged', function( event ) {
@@ -34,7 +34,7 @@ Reveal.addEventListener( 'slidechanged', function( event ) {
   var getaudio
   console.log(state);
     setTimeout(function(){
-      alert(state.indexh);
+      //alert(state.indexh);
     document.getElementsByClassName("audio")[state.indexh].play();
     event.stopPropagation();
 
