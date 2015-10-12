@@ -34,6 +34,7 @@ Reveal.addEventListener( 'slidechanged', function( event ) {
   var getaudio
   console.log(state);
     setTimeout(function(){
+      alert(state.indexh);
     document.getElementsByClassName("audio")[state.indexh].play();
     event.stopPropagation();
 

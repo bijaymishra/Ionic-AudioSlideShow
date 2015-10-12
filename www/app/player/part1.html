@@ -7,12 +7,12 @@
 
 			<div class="slides">
 
-				<section class = "sections" ng-repeat = "section in sections" data-background="{{section.Img}}">
+				<section class = "sections" ng-repeat = "section in sections" data-background="{{section.Img}}" data-background-size="300px">
 				<p class="slidetext">
 					{{section.Caption}} 
 				</p>
 				
-				<audio class="audio" preload="none" src='{{section.Sound}}' controls></audio>
+				<audio class="audio" preload="none" src='{{section.Sound}}' onended="Reveal.right()" controls></audio>
 				
 			</section>
 
