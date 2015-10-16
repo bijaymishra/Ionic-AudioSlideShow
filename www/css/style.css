@@ -1,3 +1,35 @@
+/*---Slide Layout----*/
+.reveal img.slideimg {
+    border: none;
+    background: none;
+    box-shadow: none;
+    margin: 0;
+    width: 90%;
+    height: 60%;
+    min-height: 250px;
+    min-width: 200px;
+    max-width: 700px;
+    max-height: 530px;
+}
+.reveal p.slidetext {
+    font-size: 14px;
+    width: 90%;
+    padding: 0 10px;
+    margin : 0 auto;
+}
+section.sections.present {
+    padding-top: 0;
+}
+.sections .audio {
+    width: 80%;
+}
+.reveal aside.controls {
+    height: 80px;
+}
+.slides{
+  height: 100%!important;
+  width: 100%!important;
+}
 /* list modification */
 .item {
   color:#006193;
@@ -5,6 +37,9 @@
 .logo {
     width: 100%;
     padding: 0 20px;
+    max-width: 650px;
+    margin: 0 auto;
+    display: block;
 }
 
 img.menuicon {
@@ -15,10 +50,6 @@ img.menuicon {
 
 span.icon.menuicon {
     margin-left: -3%;
-}
-p.slidetext {
-    top: -300px;
-    position: relative;
 }
 .clearfix:after{
   content: ""
@@ -65,10 +96,7 @@ p.slidetext {
 
 .medLogo_icon_container {
     height: 45%;
-    padding-top: 7%;
-    max-height: 300px;
-    max-width: 600px;
-    margin: 0 auto;
+    padding-top:15%;
 }
 
 .home_container .scroll{
@@ -304,9 +332,9 @@ span.loggedUser {
 }
 /*Error Message Design Ends */
 
-/* ----------- iPhone 4 and 4S ----------- 
+/* ----------- iPhone 4 and 4S ----------- */
 
-/* Portrait and Landscape 
+/* Portrait and Landscape */
 @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 480px)
@@ -314,7 +342,7 @@ span.loggedUser {
 
 }
 
-/* Portrait 
+/* Portrait */
 @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 480px)
@@ -322,7 +350,7 @@ span.loggedUser {
   and (orientation: portrait) {
 }
 
-/* Landscape 
+/* Landscape */
 @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 480px)
@@ -340,10 +368,6 @@ span.loggedUser {
 .home_button_container{
   position: relative;
 }
-.logo {
-    width: 100%;
-    padding: 0px 100px;
-}
 img.introImg {
     padding: 0px 25%;
     position: relative;
@@ -352,9 +376,9 @@ img.introImg {
 }
 }
 
-/* ----------- iPhone 5 and 5S ----------- 
+/* ----------- iPhone 5 and 5S ----------- */
 
-/* Portrait and Landscape 
+/* Portrait and Landscape */
 @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 568px)
@@ -362,7 +386,7 @@ img.introImg {
 
 }
 
-/* Portrait 
+/* Portrait */
 @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 568px)
@@ -374,7 +398,7 @@ img.introImg {
     }
 }
 
-/* Landscape 
+/* Landscape */
 @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 568px)
@@ -393,10 +417,6 @@ img.introImg {
 .home_button_container{
   position: relative;
 }
-.logo {
-    width: 100%;
-    padding: 0px 100px;
-}
 .intro_container .medLogo_icon_container {
     height: 25%;
     padding-top: 3%;
@@ -410,9 +430,9 @@ img.introImg {
 
 }
 
-/* ----------- iPhone 6 -----------
+/* ----------- iPhone 6 ----------- */
 
-/* Portrait and Landscape 
+/* Portrait and Landscape */
 @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 667px) 
@@ -420,7 +440,7 @@ img.introImg {
 
 }
 
-/* Portrait 
+/* Portrait */
 @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 667px) 
@@ -431,7 +451,7 @@ img.introImg {
   }
 }
 
-/* Landscape 
+/* Landscape */
 @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 667px) 
@@ -449,10 +469,6 @@ img.introImg {
 .home_button_container{
   position: relative;
 }
-.logo {
-    width: 100%;
-    padding: 0px 100px;
-}
 .intro_container .medLogo_icon_container {
     height: 25%;
     padding-top: 3%;
@@ -463,7 +479,7 @@ img.introImg {
 
 }
 
-/* Portrait 
+/* Portrait */
 @media only screen 
   and (min-device-width: 600px) 
   and (max-device-width: 900px) 
@@ -474,9 +490,9 @@ img.introImg {
   }
 }
 
-/* ----------- iPhone 6+ ----------- 
+/* ----------- iPhone 6+ ----------- */
 
-/* Portrait and Landscape 
+/* Portrait and Landscape */
 @media only screen 
   and (min-device-width: 414px) 
   and (max-device-width: 736px) 
@@ -484,7 +500,7 @@ img.introImg {
 
 }
 
-/* Portrait 
+/* Portrait */
 @media only screen 
   and (min-device-width: 414px) 
   and (max-device-width: 736px) 
@@ -493,7 +509,7 @@ img.introImg {
 
 }
 
-/* Landscape 
+/* Landscape */
 @media only screen 
   and (min-device-width: 414px) 
   and (max-device-width: 736px) 
@@ -511,10 +527,6 @@ img.introImg {
 .home_button_container{
   position: relative;
 }
-.logo {
-    width: 100%;
-    padding: 0px 100px;
-} 
 .intro_container .medLogo_icon_container {
     height: 25%;
     padding-top: 3%;
@@ -524,9 +536,9 @@ img.introImg {
   }
 }
 
-/* ----------- iPad mini ----------- 
+/* ----------- iPad mini ----------- */
 
-/* Portrait and Landscape 
+/* Portrait and Landscape */
 @media only screen 
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
@@ -534,16 +546,12 @@ img.introImg {
 
 }
 
-/* Portrait
+/* Portrait */
 @media only screen 
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (orientation: portrait) 
   and (-webkit-min-device-pixel-ratio: 1) {
-    .logo {
-    width: 100%;
-    padding: 0 50px;
-  }
   img.introImg {
     padding: 0px 35%;
   }
@@ -555,21 +563,13 @@ img.introImg {
  
 }
 
-/* Landscape 
+/* Landscape */
 @media only screen 
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (orientation: landscape) 
   and (-webkit-min-device-pixel-ratio: 1) {
 
-    .logo {
-    width: 100%;
-    padding: 0 150px;
-    }
-     p.slidetext {
-    top: -211px;
-    position: relative;
-}
 img.introImg {
     padding: 0px 39%;
   }
@@ -579,7 +579,7 @@ img.introImg {
 
 /* Google Nexus 10 Tab Landscape */
 
-/* Landscape 
+/* Landscape */
 @media only screen 
   and (min-device-width: 800px) 
   and (max-device-width: 1280px) 
@@ -594,11 +594,6 @@ img.introImg {
   .home_button_container .row + .row {
     margin-top: 0;
 }
-
-.logo {
-    width: 100%;
-    padding: 0px 150px;
-} 
 img.introImg {
     padding: 0px 39%;
   }
@@ -606,7 +601,7 @@ img.introImg {
 
 }
 
-/* ----------- Non-Retina Screens ----------- 
+/* ----------- Non-Retina Screens ----------- */
 @media screen 
   and (min-device-width: 1200px) 
   and (max-device-width: 1600px) 
@@ -618,25 +613,17 @@ img.introImg {
   .home_button_container .row + .row {
     margin-top: 0%;
   }
-  .logo {
-    width: 100%;
-    padding: 0 250px;
-  }
-  p.slidetext {
-    top: -296px;
-    position: relative;
-}
-.reveal.center, .reveal.center .slides, .reveal.center .slides section {
+/*.reveal.center, .reveal.center .slides, .reveal.center .slides section {
     min-height: 0 !important;
     max-width: 70%;
     margin: 0 auto;
-}
+}*/
 img.introImg {
     padding: 0px 42%;
   }
 }
 
-/* ----------- Non-Retina low resolution Screens ----------- 
+/* ----------- Non-Retina low resolution Screens ----------- */
 @media screen 
   and (min-device-width: 1024px) 
   and (max-device-width: 1200px) 
@@ -648,20 +635,12 @@ img.introImg {
   .home_button_container .row + .row {
     margin-top: 0%;
   }
-  .logo {
-    width: 100%;
-    padding: 0 250px;
-  }
-  p.slidetext {
-    top: -347px;
-    position: relative;
-}
-.reveal.center, .reveal.center .slides, .reveal.center .slides section {
+/*.reveal.center, .reveal.center .slides, .reveal.center .slides section {
     min-height: 0 !important;
     max-height: 75%;
     margin: 0 auto;
 
-}
+}*/
 img.introImg {
     padding: 0px 42%;
   }
@@ -671,7 +650,7 @@ span.introText {
     }  
 }
 
-/* ----------- Retina Screens ----------- 
+/* ----------- Retina Screens ----------- */
 @media screen 
   and (min-device-width: 1200px) 
   and (max-device-width: 1600px) 
@@ -684,26 +663,17 @@ span.introText {
   .home_button_container .row + .row {
     margin-top: 0%;
   }
-
-  .logo {
-    width: 100%;
-    padding: 0 250px;
-  }
-  p.slidetext {
-    top: -296px;
-    position: relative;
-}
-.reveal.center, .reveal.center .slides, .reveal.center .slides section {
+/*.reveal.center, .reveal.center .slides, .reveal.center .slides section {
     min-height: 0 !important;
     max-width: 70%;
     margin: 0 auto;
-}
+}*/
 img.introImg {
     padding: 0px 36%;
   }
 
-}*/
-.slides{
+}
+/*.slides{
   width: auto!important;
   height: auto!important;
   zoom:0!important;
@@ -732,7 +702,8 @@ body .reveal p{
     top: -330px;
     text-align: center;
     width: 100%;
-}
-/*}*/
+}*/
+
+
 
 

@@ -20,6 +20,10 @@
         audioSuffix: '.mp3',
         //audioDefaultDuration: 5,
         audioPlayerOpacity: 0.5,
+        center:false,
+        embedded:true,
+        minScale:0,
+        maxScale:0,
 
 
                  //transition: 'slide',
