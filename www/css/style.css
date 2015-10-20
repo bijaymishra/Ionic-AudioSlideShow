@@ -9,11 +9,11 @@
     min-height: 250px;
     min-width: 200px;
     max-width: 700px;
-    max-height: 530px;
+    max-height: 500px;
 }
 .reveal p.slidetext {
     font-size: 14px;
-    width: 90%;
+    width: 80%;
     padding: 0 10px;
     margin : 0 auto;
 }
@@ -29,6 +29,13 @@ section.sections.present {
 .slides{
   height: 100%!important;
   width: 100%!important;
+  padding: 0px;
+  top: 0!important;
+  left: 0!important;
+  bottom: 0!important;
+  right: 0!important;
+  position: static!important;
+  transform: none!important;
 }
 /* list modification */
 .item {
