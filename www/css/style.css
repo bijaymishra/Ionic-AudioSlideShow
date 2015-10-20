@@ -37,6 +37,9 @@ section.sections.present {
   position: static!important;
   transform: none!important;
 }
+.reveal .slides > section.sections{
+  padding: 0px;
+}
 /* list modification */
 .item {
   color:#006193;
